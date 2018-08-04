@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CandidateDetailViewController" customModule="Hune" customModuleProvider="target">
+            <connections>
+                <outlet property="constraintHeighbanner" destination="ABS-Qb-Xx0" id="R8Y-s1-hCe"/>
+                <outlet property="imageBanner" destination="j6G-Gn-PAb" id="bP5-U3-R8o"/>
+                <outlet property="lbAds" destination="0Go-eZ-REv" id="zI9-dt-unH"/>
+                <outlet property="tableView" destination="Lxo-nd-5Nt" id="g5V-G9-ex4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lxo-nd-5Nt">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSn-Q3-jLW" customClass="PushButtonView" customModule="Hune" customModuleProvider="target">
+                    <rect key="frame" x="295" y="513" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="EPa-hv-8c6"/>
+                        <constraint firstAttribute="height" constant="60" id="uEi-Pt-xmN"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                            <color key="value" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onBtnAddComment:" destination="-1" eventType="touchUpInside" id="Bvk-1F-177"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-Gn-PAb">
+                    <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ABS-Qb-Xx0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HuNe Ads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-eZ-REv">
+                    <rect key="frame" x="2" y="524.5" width="73" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Go-eZ-REv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="0fE-el-Sga"/>
+                <constraint firstItem="Lxo-nd-5Nt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="232-Am-1vr"/>
+                <constraint firstItem="j6G-Gn-PAb" firstAttribute="top" secondItem="Lxo-nd-5Nt" secondAttribute="bottom" id="4oR-PY-63m"/>
+                <constraint firstItem="j6G-Gn-PAb" firstAttribute="top" secondItem="0Go-eZ-REv" secondAttribute="bottom" id="4z8-k6-45W"/>
+                <constraint firstAttribute="trailing" secondItem="j6G-Gn-PAb" secondAttribute="trailing" id="52o-rI-rxS"/>
+                <constraint firstAttribute="trailing" secondItem="OSn-Q3-jLW" secondAttribute="trailing" constant="20" id="BNp-ce-wbg"/>
+                <constraint firstAttribute="bottom" secondItem="j6G-Gn-PAb" secondAttribute="bottom" id="CRo-Fy-LKT"/>
+                <constraint firstAttribute="bottom" secondItem="OSn-Q3-jLW" secondAttribute="bottom" constant="30" id="NSb-Oa-FbQ"/>
+                <constraint firstItem="j6G-Gn-PAb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gCb-sU-mxq"/>
+                <constraint firstAttribute="trailing" secondItem="Lxo-nd-5Nt" secondAttribute="trailing" id="kG0-QL-yVE"/>
+                <constraint firstItem="Lxo-nd-5Nt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tPS-U6-yp4"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="33.5" y="75.5"/>
+        </view>
+    </objects>
+</document>

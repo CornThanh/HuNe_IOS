@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBLoginTableViewCell" id="KGk-i7-Jjw" customClass="FBLoginTableViewCell" customModule="Hune" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jI4-j3-gNS">
+                        <rect key="frame" x="60" y="0.0" width="200" height="43.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3o3-UO-ByN">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="inn-n2-p4H">
+                                        <rect key="frame" x="17.5" y="12.5" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="3XF-83-rvP"/>
+                                            <constraint firstAttribute="height" constant="20" id="hOF-ug-RQw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-ae-WVS">
+                                        <rect key="frame" x="43" y="0.0" width="1" height="44"/>
+                                        <color key="backgroundColor" red="0.094117647058823528" green="0.16862745098039217" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="FWy-kE-iE5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="inn-n2-p4H" firstAttribute="centerX" secondItem="3o3-UO-ByN" secondAttribute="centerX" id="B63-99-3lC"/>
+                                    <constraint firstItem="inn-n2-p4H" firstAttribute="centerY" secondItem="3o3-UO-ByN" secondAttribute="centerY" id="DBj-RE-bYN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ik9-ae-WVS" secondAttribute="trailing" id="GlN-FI-DHA"/>
+                                    <constraint firstItem="ik9-ae-WVS" firstAttribute="top" secondItem="3o3-UO-ByN" secondAttribute="top" id="UH3-2R-Yfa"/>
+                                    <constraint firstAttribute="width" secondItem="3o3-UO-ByN" secondAttribute="height" id="pAA-zi-NWD"/>
+                                    <constraint firstAttribute="bottom" secondItem="ik9-ae-WVS" secondAttribute="bottom" id="pHf-xM-JYF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czD-OH-uqe">
+                                <rect key="frame" x="44" y="0.0" width="156" height="43.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uE-b9-f9b">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <connections>
+                                    <action selector="onBtnLoginFB:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qNe-WM-h8W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20784313725490194" green="0.29411764705882354" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="czD-OH-uqe" secondAttribute="bottom" id="12J-9V-Tnw"/>
+                            <constraint firstItem="6uE-b9-f9b" firstAttribute="leading" secondItem="jI4-j3-gNS" secondAttribute="leading" id="2cK-Mn-xiH"/>
+                            <constraint firstAttribute="trailing" secondItem="6uE-b9-f9b" secondAttribute="trailing" id="5LD-Y7-hEe"/>
+                            <constraint firstAttribute="bottom" secondItem="3o3-UO-ByN" secondAttribute="bottom" id="B2w-0s-xYI"/>
+                            <constraint firstAttribute="bottom" secondItem="6uE-b9-f9b" secondAttribute="bottom" id="GfJ-Wq-oOw"/>
+                            <constraint firstItem="czD-OH-uqe" firstAttribute="leading" secondItem="3o3-UO-ByN" secondAttribute="trailing" id="PtF-zY-T42"/>
+                            <constraint firstAttribute="trailing" secondItem="czD-OH-uqe" secondAttribute="trailing" id="ZLq-8g-BP4"/>
+                            <constraint firstItem="3o3-UO-ByN" firstAttribute="top" secondItem="jI4-j3-gNS" secondAttribute="top" id="htt-Ku-THG"/>
+                            <constraint firstItem="czD-OH-uqe" firstAttribute="top" secondItem="jI4-j3-gNS" secondAttribute="top" id="mQe-2D-2cn"/>
+                            <constraint firstItem="3o3-UO-ByN" firstAttribute="leading" secondItem="jI4-j3-gNS" secondAttribute="leading" id="npJ-eI-kK0"/>
+                            <constraint firstAttribute="width" constant="200" id="pin-XE-t46"/>
+                            <constraint firstItem="6uE-b9-f9b" firstAttribute="top" secondItem="jI4-j3-gNS" secondAttribute="top" id="utb-vB-qEl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="jI4-j3-gNS" secondAttribute="bottom" id="1uO-rP-dDD"/>
+                    <constraint firstItem="jI4-j3-gNS" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="YnX-BK-Yz3"/>
+                    <constraint firstItem="jI4-j3-gNS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vQy-k9-sKs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnContentView" destination="jI4-j3-gNS" id="gRo-QE-jMh"/>
+                <outlet property="titleLB" destination="czD-OH-uqe" id="OIU-js-Y7c"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_facebook" width="17" height="34"/>
+    </resources>
+</document>

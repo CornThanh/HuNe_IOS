@@ -1,0 +1,76 @@
+{
+    "appimage": "ic_logo_new_new",
+    "background": "ic_login_background",
+    "backgroundColor" : "#33ccff",
+    "inputColor" : "#666666",
+    "inputPlaceHolderColor" : "#cccccc",
+    "signin": [
+               {
+               "key": "phone",
+               "placeholder": "Phone",
+               "security": false,
+               "type": "number"
+               },
+               {
+               "key": "password",
+               "placeholder": "Password",
+               "security": true,
+               }
+               ],
+    "signup": [
+               {
+               "key": "full_name",
+               "placeholder": "User name",
+               "security": false
+               },
+               {
+               "key": "phone",
+               "placeholder": "Phone",
+               "security": false,
+               "type": "number"
+               },
+               {
+               "key": "password",
+               "placeholder": "Password",
+               "security": true
+               },{
+               "key": "re_password",
+               "placeholder": "Re-type password",
+               "security": true,
+               "retype": "password"
+               }
+               ],
+    "forgetpass": [
+				   {
+				   "key": "new_password",
+				   "placeholder": "New password",
+				   "security": true
+				   },
+				   {
+				   "key": "re_password",
+				   "placeholder": "Re-type password",
+				   "security": true,
+				   "retype": "new_password"
+				   }
+                   ],
+    "buttons": [
+                {
+                "icon": "fb_logo",
+                "title": "Facebook",
+                "titleColor": "#ffffffff",
+                "backgroundColor": "#00000000",
+                "loginType": "facebook"
+                },{
+                "icon": "phone_logo",
+                "title": "Sign in with Phone Number",
+                "titleColor": "#ffffffff",
+                "backgroundColor": "#00b33eff",
+                "loginType": "local"
+                },{
+                "title": "Trial",
+                "titleColor": "#ffffffff",
+                "backgroundColor": "#00000000",
+                "loginType": "guest"
+                }
+                ]
+}

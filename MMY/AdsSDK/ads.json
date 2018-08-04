@@ -1,0 +1,96 @@
+{
+    "ads": [
+            {
+            "adCustomType": "adGGSmartTopView",
+            "adType": "smart",
+            "provider": "google",
+            "adSmartSize": "portrait",
+            "id": "ca-app-pub-9404749943049506/9409456245"
+            },
+            {
+            "adCustomType": "adGGNormalView",
+            "adType": "normal",
+            "provider": "google",
+            "width": 300,
+            "height": 200,
+            "id": "ca-app-pub-9049144079394406/6815570196"
+            },
+            {
+            "adCustomType": "adGGNativeView",
+            "adType": "native",
+            "provider": "google",
+            "width": 300,
+            "height": 200,
+            "id": "ca-app-pub-9049144079394406/6815570196"
+            },
+            {
+            "adCustomType": "adGGInterstitial",
+            "adType": "interstitial",
+            "provider": "google",
+            "id": "ca-app-pub-9049144079394406/1156049405"
+            },
+            {
+            "adCustomType": "adFBBannerView",
+            "adType": "normal",
+            "provider": "facebook",
+            "width": 0,
+            "height": 50,
+            "id": "581076048949837_597062634017845"
+            },
+            {
+            "adCustomType": "adFBBigBannerView",
+            "adType": "normal",
+            "provider": "facebook",
+            "width": 0,
+            "height": 250,
+            "id": "581076048949837_597062634017845"
+            },
+            {
+            "adCustomType": "adFBCustomNativeView",
+            "adType": "customNative",
+            "provider": "facebook",
+            "width": 300,
+            "height": 300,
+            "id": "1037214949717099_1039012029537391"
+            },
+            {
+            "adCustomType": "adFBNativeView",
+            "adType": "native",
+            "provider": "facebook",
+            "width": 300,
+            "height": 300,
+            "id": "1037214949717099_1039012029537391"
+            },
+            {
+            "adCustomType": "adFBInterstitialView",
+            "adType": "interstitial",
+            "provider": "facebook",
+            "id": "581076048949837_597089340681841"
+            }
+            ],
+    "testDeviceIds": {
+        "enable": true,
+        "ids": [
+                {
+                "provider": "google",
+                "id": "simulator"
+                },
+                {
+                "provider": "google",
+                "id": "ca009b568739b8053b9c26aa0fe50e3e"
+                },
+                {
+                "provider": "facebook",
+                "id": "9740459be481ce5d117c822ff3e2b20d11c5f811"
+                },
+                {
+                "provider": "facebook",
+                "id": "1392331cc161f636d798d4df1bcd3a8822d47fc7"
+                },
+                {
+                "provider": "myIphone",
+                "id": "4126658ab48e1dad1fe5d516d8177de7"
+                }
+                ]
+    }
+}

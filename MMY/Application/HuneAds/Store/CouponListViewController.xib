@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CouponListViewController" customModule="Hune" customModuleProvider="target">
+            <connections>
+                <outlet property="cvContent" destination="b0t-93-F3a" id="bwL-OY-SOi"/>
+                <outlet property="ivCoinIcon" destination="3kq-AC-YHl" id="Sj4-3z-bmA"/>
+                <outlet property="lbMyCoinTitle" destination="6nR-pQ-oHF" id="KYF-sA-vKx"/>
+                <outlet property="lbMyCoinValue" destination="QYT-nV-9CS" id="6Sd-hy-07c"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b0t-93-F3a">
+                    <rect key="frame" x="5" y="72.5" width="365" height="594.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YLr-1U-eIX">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm của tôi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nR-pQ-oHF">
+                    <rect key="frame" x="16" y="36" width="96" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCoin" translatesAutoresizingMaskIntoConstraints="NO" id="3kq-AC-YHl">
+                    <rect key="frame" x="171" y="37.5" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="ec3-6s-gy0"/>
+                        <constraint firstAttribute="width" constant="16" id="iKb-9l-x3K"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-nV-9CS">
+                    <rect key="frame" x="120" y="36" width="46.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.91372549020000005" green="0.13725490200000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b0t-93-F3a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="0cH-y3-nTm"/>
+                <constraint firstItem="6nR-pQ-oHF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="90u-g3-awA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b0t-93-F3a" secondAttribute="trailing" constant="5" id="PMC-w8-4bo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b0t-93-F3a" secondAttribute="bottom" id="S3b-fe-j7x"/>
+                <constraint firstItem="3kq-AC-YHl" firstAttribute="centerY" secondItem="6nR-pQ-oHF" secondAttribute="centerY" id="SCc-Im-XbX"/>
+                <constraint firstItem="6nR-pQ-oHF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Vue-Y4-m8X"/>
+                <constraint firstItem="QYT-nV-9CS" firstAttribute="centerY" secondItem="6nR-pQ-oHF" secondAttribute="centerY" id="gM6-U8-guh"/>
+                <constraint firstItem="b0t-93-F3a" firstAttribute="top" secondItem="6nR-pQ-oHF" secondAttribute="bottom" constant="16" id="n91-bF-YRl"/>
+                <constraint firstItem="QYT-nV-9CS" firstAttribute="leading" secondItem="6nR-pQ-oHF" secondAttribute="trailing" constant="8" id="oum-i7-UgP"/>
+                <constraint firstItem="3kq-AC-YHl" firstAttribute="leading" secondItem="QYT-nV-9CS" secondAttribute="trailing" constant="4" id="pmx-dc-KID"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="3.5" y="-7.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icCoin" width="21" height="21"/>
+    </resources>
+</document>

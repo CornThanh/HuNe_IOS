@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="394" id="KGk-i7-Jjw" customClass="AddCommentCell" customModule="Hune" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="317" height="394"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="317" height="393.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xc-Ln-LXI">
+                        <rect key="frame" x="0.0" y="8" width="317" height="1"/>
+                        <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="PUk-eE-HA4"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-J2-xiO" customClass="TPFloatRatingView">
+                        <rect key="frame" x="49" y="45" width="220" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="BkO-i3-ldQ"/>
+                            <constraint firstAttribute="width" constant="220" id="ZPD-Jj-hTP"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adK-Jv-ewK">
+                        <rect key="frame" x="30" y="95" width="257" height="200"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="biA-3r-3d2">
+                                <rect key="frame" x="10" y="10" width="237" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="biA-3r-3d2" secondAttribute="bottom" constant="10" id="ADM-yi-qdu"/>
+                            <constraint firstAttribute="height" constant="200" id="Isj-tj-gMr"/>
+                            <constraint firstItem="biA-3r-3d2" firstAttribute="top" secondItem="adK-Jv-ewK" secondAttribute="top" constant="10" id="bYf-oc-VbZ"/>
+                            <constraint firstAttribute="trailing" secondItem="biA-3r-3d2" secondAttribute="trailing" constant="10" id="kSV-4V-eLP"/>
+                            <constraint firstItem="biA-3r-3d2" firstAttribute="leading" secondItem="adK-Jv-ewK" secondAttribute="leading" constant="10" id="qbj-TN-Tfb"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HI-fF-iEi">
+                        <rect key="frame" x="69" y="310" width="180" height="35"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="gqL-xG-AFk"/>
+                            <constraint firstAttribute="width" constant="180" id="mrF-QN-FC1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                        <state key="normal" title="HOÀN TẤT">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="onBtnDone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="T1o-VH-yR6"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="adK-Jv-ewK" secondAttribute="trailing" constant="30" id="1Sk-f3-hcJ"/>
+                    <constraint firstItem="7Kq-J2-xiO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="5zc-zV-A2j"/>
+                    <constraint firstItem="0HI-fF-iEi" firstAttribute="top" secondItem="adK-Jv-ewK" secondAttribute="bottom" constant="15" id="Iyb-ho-DwR"/>
+                    <constraint firstItem="adK-Jv-ewK" firstAttribute="top" secondItem="7Kq-J2-xiO" secondAttribute="bottom" constant="20" id="Lxn-Yw-Qcl"/>
+                    <constraint firstItem="0HI-fF-iEi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Pkl-pj-sE5"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0HI-fF-iEi" secondAttribute="bottom" constant="26.5" id="TqN-Kd-Pj6"/>
+                    <constraint firstItem="adK-Jv-ewK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="Z25-wD-oCi"/>
+                    <constraint firstItem="6xc-Ln-LXI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="iiE-vU-TeK"/>
+                    <constraint firstItem="6xc-Ln-LXI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kmB-0j-0w1"/>
+                    <constraint firstItem="7Kq-J2-xiO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rX2-EJ-qlK"/>
+                    <constraint firstAttribute="trailing" secondItem="6xc-Ln-LXI" secondAttribute="trailing" id="xoW-XI-8YJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentTF" destination="biA-3r-3d2" id="35j-Th-Ynz"/>
+                <outlet property="commentView" destination="adK-Jv-ewK" id="Bcj-fK-jO1"/>
+                <outlet property="doneBtn" destination="0HI-fF-iEi" id="zug-fW-nFR"/>
+                <outlet property="ratingView" destination="7Kq-J2-xiO" id="hua-Ot-Rdu"/>
+            </connections>
+            <point key="canvasLocation" x="35.5" y="150"/>
+        </tableViewCell>
+    </objects>
+</document>

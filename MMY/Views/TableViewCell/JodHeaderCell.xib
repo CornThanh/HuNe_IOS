@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JodHeaderCell" rowHeight="46" id="KGk-i7-Jjw" customClass="JodHeaderCell" customModule="Hune" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="46"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="456" height="45.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Quang Nhật Hạ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO9-3I-hBm">
+                        <rect key="frame" x="20" y="14" width="239" height="18"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                        <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-au-u4S">
+                        <rect key="frame" x="356" y="4.5" width="80" height="35"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.77647058820000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="CKn-MA-1WS"/>
+                            <constraint firstAttribute="width" constant="80" id="sPr-VK-t4k"/>
+                        </constraints>
+                        <state key="normal" image="ic_profile_phone_white"/>
+                        <connections>
+                            <action selector="onBtnCall:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3N1-ZH-4ox"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1km-5P-38D">
+                        <rect key="frame" x="315" y="10" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="9CL-cn-bgS"/>
+                            <constraint firstAttribute="width" constant="26" id="DrK-YO-Mg2"/>
+                        </constraints>
+                        <state key="normal" image="icon_share_red"/>
+                        <connections>
+                            <action selector="onBtnShare:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QKP-in-fQO"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe2-P5-Nx9">
+                        <rect key="frame" x="274" y="10" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="0ig-lO-vhC"/>
+                            <constraint firstAttribute="height" constant="26" id="VeF-oW-4i2"/>
+                        </constraints>
+                        <state key="normal" image="icon_heart_red_empty"/>
+                        <connections>
+                            <action selector="onBtnFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="luq-Fq-Dsi"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pe2-P5-Nx9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2A5-XX-qAS"/>
+                    <constraint firstItem="1km-5P-38D" firstAttribute="leading" secondItem="Pe2-P5-Nx9" secondAttribute="trailing" constant="15" id="C6g-ny-d3y"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7dE-au-u4S" secondAttribute="bottom" constant="5" id="Ms5-0y-mx8"/>
+                    <constraint firstAttribute="trailing" secondItem="7dE-au-u4S" secondAttribute="trailing" constant="20" id="SdI-Zf-Q9M"/>
+                    <constraint firstItem="7dE-au-u4S" firstAttribute="leading" secondItem="1km-5P-38D" secondAttribute="trailing" constant="15" id="TJ5-1T-Lk6"/>
+                    <constraint firstItem="7dE-au-u4S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U4R-54-hk7"/>
+                    <constraint firstItem="DO9-3I-hBm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="X9L-rA-vr7"/>
+                    <constraint firstItem="DO9-3I-hBm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="n1i-qA-nPY"/>
+                    <constraint firstItem="Pe2-P5-Nx9" firstAttribute="leading" secondItem="DO9-3I-hBm" secondAttribute="trailing" constant="15" id="n5B-03-SmI"/>
+                    <constraint firstItem="1km-5P-38D" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uoz-uh-QDG"/>
+                    <constraint firstItem="DO9-3I-hBm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xVl-jc-QKw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="callBtn" destination="7dE-au-u4S" id="Ic5-Qy-Y4e"/>
+                <outlet property="isFavoriteButton" destination="Pe2-P5-Nx9" id="JoP-2d-vMo"/>
+                <outlet property="nameLB" destination="DO9-3I-hBm" id="89Q-nN-a0Y"/>
+            </connections>
+            <point key="canvasLocation" x="102" y="124"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_profile_phone_white" width="20" height="19"/>
+        <image name="icon_heart_red_empty" width="64" height="64"/>
+        <image name="icon_share_red" width="15" height="15"/>
+    </resources>
+</document>

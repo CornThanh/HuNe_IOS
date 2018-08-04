@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMYProfileViewController" customModule="Hune" customModuleProvider="target">
+            <connections>
+                <outlet property="addBtn" destination="TdE-2d-vAU" id="IIO-LE-LEa"/>
+                <outlet property="chatWithUs" destination="lYG-UH-SlM" id="AF2-dX-UPO"/>
+                <outlet property="settingBtn" destination="zvU-q5-rGA" id="n2M-Ko-ljd"/>
+                <outlet property="tableView" destination="jdi-Qc-z5k" id="DkX-4E-iKE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-Qc-z5k">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvU-q5-rGA">
+                    <rect key="frame" x="21" y="627" width="78" height="20"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                    <state key="normal" title="CÀI ĐẶT" image="ic_left_setting">
+                        <color key="titleColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onBtnSetting:" destination="-1" eventType="touchUpInside" id="Pg7-7K-AmG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-2d-vAU" customClass="PushButtonView" customModule="Hune" customModuleProvider="target">
+                    <rect key="frame" x="295" y="577" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="NLe-Fb-7Me"/>
+                        <constraint firstAttribute="width" constant="60" id="nha-0t-bsi"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                            <color key="value" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onBtnAdd:" destination="-1" eventType="touchUpInside" id="8Lf-Zb-nB3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYG-UH-SlM">
+                    <rect key="frame" x="122.5" y="628" width="130" height="18"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                    <state key="normal" title="CHAT VOI HUNE" image="icon_messenger">
+                        <color key="titleColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onChatWithUs:" destination="-1" eventType="touchUpInside" id="CSu-YU-aZT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jdi-Qc-z5k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7Dx-TO-9Mf"/>
+                <constraint firstItem="zvU-q5-rGA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="84p-8L-766"/>
+                <constraint firstItem="lYG-UH-SlM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zvU-q5-rGA" secondAttribute="trailing" constant="8" id="9Wf-13-hCe"/>
+                <constraint firstItem="jdi-Qc-z5k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CsS-fu-yiY"/>
+                <constraint firstAttribute="trailing" secondItem="jdi-Qc-z5k" secondAttribute="trailing" id="FSU-X4-lPO"/>
+                <constraint firstAttribute="bottom" secondItem="zvU-q5-rGA" secondAttribute="bottom" constant="20" id="YN4-ss-jXb"/>
+                <constraint firstItem="lYG-UH-SlM" firstAttribute="centerY" secondItem="zvU-q5-rGA" secondAttribute="centerY" id="YiE-Wg-22l"/>
+                <constraint firstAttribute="trailing" secondItem="TdE-2d-vAU" secondAttribute="trailing" constant="20" id="a6g-Es-XcM"/>
+                <constraint firstItem="TdE-2d-vAU" firstAttribute="top" secondItem="jdi-Qc-z5k" secondAttribute="bottom" constant="8" id="gBY-VC-GaN"/>
+                <constraint firstAttribute="bottom" secondItem="TdE-2d-vAU" secondAttribute="bottom" constant="30" id="rhZ-18-0td"/>
+                <constraint firstItem="lYG-UH-SlM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="750" id="xoE-35-MFc"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="56.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_left_setting" width="20" height="20"/>
+        <image name="icon_messenger" width="16" height="16"/>
+    </resources>
+</document>

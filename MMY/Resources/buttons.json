@@ -1,0 +1,13 @@
+{
+    "buttons": [
+   
+                {
+                "icon": "https://firebasestorage.googleapis.com/v0/b/ufie-38b62.appspot.com/o/images%2FHprmehlIpUc2PiYl4FDubymFCHf2%2F1479794108698.png?alt=media&token=54e17dea-c8ce-4e1a-9fb4-7eaab4633bb5",
+                "title": "Facebook",
+                "titleColor": "#ffffff",
+                "backgroundColor": "#3b5998",
+                "loginType": "facebook"
+                }
+    
+                ]
+}

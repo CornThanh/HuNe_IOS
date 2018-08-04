@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RedeemCoinViewController" customModule="Hune" customModuleProvider="target">
+            <connections>
+                <outlet property="btRedeem" destination="2M5-am-lCA" id="q1d-rQ-m6e"/>
+                <outlet property="lbTextfield" destination="CRt-lG-DVH" id="aef-0s-nr0"/>
+                <outlet property="lbTitle" destination="XRo-oT-ZyB" id="ria-WK-VmI"/>
+                <outlet property="tfInputPromotionCode" destination="cFY-75-vK2" id="ryG-K6-jMT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRo-oT-ZyB">
+                    <rect key="frame" x="10" y="40" width="39.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRt-lG-DVH">
+                    <rect key="frame" x="10" y="79.5" width="39.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-75-vK2">
+                    <rect key="frame" x="10" y="109" width="355" height="39"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M5-am-lCA">
+                    <rect key="frame" x="62" y="178" width="250" height="44.5"/>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btRedeemPoint:" destination="-1" eventType="touchUpInside" id="81u-lr-yKL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cFY-75-vK2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:17" id="Hyg-EM-3cm"/>
+                <constraint firstItem="XRo-oT-ZyB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="N41-TV-txY"/>
+                <constraint firstItem="CRt-lG-DVH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Sex-4W-cxm"/>
+                <constraint firstItem="2M5-am-lCA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="YMQ-G8-cBY"/>
+                <constraint firstItem="CRt-lG-DVH" firstAttribute="top" secondItem="XRo-oT-ZyB" secondAttribute="bottom" constant="20" id="d5K-FS-FIA"/>
+                <constraint firstItem="2M5-am-lCA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dKY-oi-zWQ"/>
+                <constraint firstItem="2M5-am-lCA" firstAttribute="top" secondItem="cFY-75-vK2" secondAttribute="bottom" constant="30" id="gdU-5r-p1E"/>
+                <constraint firstItem="cFY-75-vK2" firstAttribute="top" secondItem="CRt-lG-DVH" secondAttribute="bottom" constant="10" id="kCv-FN-v4a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cFY-75-vK2" secondAttribute="trailing" constant="10" id="o6n-Z5-seS"/>
+                <constraint firstItem="2M5-am-lCA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:15" id="q6R-sd-giz"/>
+                <constraint firstItem="cFY-75-vK2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="r7V-aq-UZS"/>
+                <constraint firstItem="XRo-oT-ZyB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="uhW-gQ-zKk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="C86-G3-w9h">
+            <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <nil key="textColor"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <textInputTraits key="textInputTraits"/>
+        </textField>
+    </objects>
+</document>
