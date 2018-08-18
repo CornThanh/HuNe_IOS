@@ -224,11 +224,19 @@ extension ServiceManager {
             }
         }
         
-        func getSellerOrder(completion: @escaping ((ListResult<ManageOrderModel>) -> Void)) {
+        func getSellerOrder(status: Int, fromDate: String, toDate: String, completion: @escaping ((ListResult<ManageOrderModel>) -> Void)) {
             var urlString = newBackendUrl + "hunemart/seller/order"
             
             if let token = accessToken {
                 urlString.append("?token=\(token)")
+            }
+
+            if status > 0 {
+                urlString.append("&status=\(status)")
+            }
+            
+            if fromDate.count > 9 && toDate.count > 0 {
+                urlString.append("&date_from=\(fromDate)&date_to=\(toDate)")
             }
             
             requestServer(urlString, method: .get, parameters: nil) { (response) in
@@ -251,7 +259,7 @@ extension ServiceManager {
             }
         }
         
-        func orderBuyerProduct(_ sortType: Int, sortTypeProduct: Int, nameSeller: String ,completion: @escaping ((ListResult<ListProductBuyerModel>) -> Void)) {
+        func orderBuyerProduct(_ sortType: Int, sortTypeProduct: Int, countStar: Int ,completion: @escaping ((ListResult<ListProductBuyerModel>) -> Void)) {
             
             var urlString = newBackendUrl + "hunemart/buyer"
             
@@ -268,8 +276,8 @@ extension ServiceManager {
                 print("//////////////////////////////////////////////////////",sortTypeProduct)
             }
             
-            if nameSeller != "" {
-                urlString.append("&product_name=\(nameSeller)")
+            if countStar >= 0 {
+                urlString.append("&star_number=\(countStar)")
             }
             
             requestServer(urlString, method: .get, parameters: nil) { (response) in
@@ -277,6 +285,22 @@ extension ServiceManager {
                 completion(result)
             }
             
+        }
+        
+        func likeProduct (_ idProduct: String, completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
+            var urlString = newBackendUrl + "hunemart/buyer/like"
+            // POST /hunemart/buyer/dislike/{id}
+            if let token = accessToken {
+                urlString.append("?token=\(token)")
+            }
+            
+            var params = [String: Any]()
+            params["id"] = idProduct
+            
+            requestServer(urlString, method: .post, parameters: params) { (response) in
+                let result = SingleResult<BaseModel>.handle(response: response, key: "data")
+                completion(result)
+            }
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailProductViewController: UIViewController {
     @IBOutlet weak var lbTypeProduct: UILabel!
@@ -24,6 +25,9 @@ class DetailProductViewController: UIViewController {
     @IBOutlet weak var viewAmount: UIView!
     @IBOutlet weak var btLike: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imgeOne: UIImageView!
+    @IBOutlet weak var imageTwo: UIImageView!
+    @IBOutlet weak var imageThree: UIImageView!
     
     var productDetail: ListProductBuyerModel?
     var count = 1
@@ -48,6 +52,8 @@ class DetailProductViewController: UIViewController {
         showData()
         setupTableView()
         setupStar()
+        imageProduct()
+        tableView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +65,20 @@ class DetailProductViewController: UIViewController {
         customButton()
     }
     
+    func imageProduct() {
+        if productDetail?.image0 != "" {
+            self.imgeOne.sd_setImage(with: URL(string: (productDetail?.image0)!), placeholderImage: UIImage(named: "placeholder0.png"), options: [], completed: nil)
+        }
+        
+        if productDetail?.image1 != "" {
+            self.imageTwo.sd_setImage(with: URL(string: (productDetail?.image1)!), placeholderImage: UIImage(named: "placeholder1.png"), options: [], completed: nil)
+        }
+        
+        if productDetail?.image2 != "" {
+            self.imageThree.sd_setImage(with: URL(string: (productDetail?.image2)!), placeholderImage: UIImage(named: "placeholder2.png"), options: [], completed: nil)
+        }
+    }
+    
     func setupStar() {
         viewAmountStar.emptySelectedImage = UIImage(named: "star_empty_yellow")
         viewAmountStar.fullSelectedImage = UIImage(named:"star_full_yellow")
@@ -68,7 +88,7 @@ class DetailProductViewController: UIViewController {
         viewAmountStar.halfRatings = false
         viewAmountStar.floatRatings = false
         viewAmountStar.rating = 1
-        viewAmountStar.editable = true
+        viewAmountStar.editable = false
     }
     
     func setupTableView() {
@@ -157,7 +177,18 @@ class DetailProductViewController: UIViewController {
             switch result {
             case .success( _):
                 print("Okkkkkkkkkkkkkkk")
-                 self.navigationController?.pushViewController(ResponseBuyViewController(), animated: true)
+                if self.checkLike == true {
+                    ServiceManager.martService.likeProduct((self.productDetail?.product_id)!, completion: { (result) in
+                        switch result {
+                        case .success(_):
+                            self.navigationController?.pushViewController(ResponseBuyViewController(), animated: true)
+                        case .failure(_):
+                            self.showDialog(title: "HuNe Mart", message: "DetailProductError".localized(), handler:nil)
+                        }
+                    })
+                } else {
+                    self.navigationController?.pushViewController(ResponseBuyViewController(), animated: true)
+                }
             case .failure(let error):
                 print("Erorrrrrrrrrrrr", error.errorCode)
                 self.showDialog(title: "HuNe Mart", message: "DetailProductError".localized(), handler:nil)
@@ -180,11 +211,11 @@ class DetailProductViewController: UIViewController {
 
 extension DetailProductViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -33,6 +33,7 @@ class ProductMartViewController: UIViewController {
         super.viewDidLoad()
         addLeftBarButton()
         title = "MartBuyerViewController1".localized()
+        searchStar.delegate = self
         setUpFilter()
         setUpCollectionView()
         callData()
@@ -101,7 +102,7 @@ class ProductMartViewController: UIViewController {
         }
         typeDropDown1.dataSource = typeDataSource
         typeDropDown1.selectionAction = { [unowned self] (index, item) in
-            self.sortProduct(type: ShareData.arrType[index].id!, typeProduct: 0, name: "")
+            self.sortProduct(type: ShareData.arrType[index].id!, typeProduct: 0, start: -1)
         }
     }
     
@@ -116,18 +117,18 @@ class ProductMartViewController: UIViewController {
         }
         typeDropDown3.dataSource = typeDataSource
         typeDropDown3.selectionAction = { [unowned self] (index, item) in
-            self.sortProduct(type: 0, typeProduct: ShareData.arrProductType[index].id!, name: "")
+            self.sortProduct(type: 0, typeProduct: ShareData.arrProductType[index].id!, start: -1)
         }
     }
     
-    func sortProduct(type: Int, typeProduct: Int, name: String) {
-        ServiceManager.martService.orderBuyerProduct(type, sortTypeProduct: typeProduct, nameSeller: name) { (result) in
+    func sortProduct(type: Int, typeProduct: Int, start: Int) {
+        ServiceManager.martService.orderBuyerProduct(type, sortTypeProduct: typeProduct, countStar: start) { (result) in
             switch result {
             case .success(let data, _):
                 if data.count > 0 {
                     self.arrProduct = data
-                    self.collectionView.reloadData()
                 }
+                 self.collectionView.reloadData()
             case .failure(let error):
                 print("error", error.errorCode)
             }
@@ -145,6 +146,19 @@ class ProductMartViewController: UIViewController {
     }
     
     
+}
+
+extension ProductMartViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        let count = Int(updatedText) ?? 0
+        self.sortProduct(type: -1, typeProduct: -1, start: count)
+        
+        return true
+    }
 }
 
 extension ProductMartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -58,6 +58,8 @@ class PostNewsViewController: UIViewController {
     var checkEdit: Bool?
     var dataEdit: ManageStoreModel?
     
+     let group = DispatchGroup()
+    
     init(checkEdit: Bool, dataEdit: ManageStoreModel) {
         super.init(nibName: "PostNewsViewController", bundle: nil)
         self.checkEdit = checkEdit
@@ -383,7 +385,7 @@ class PostNewsViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        checkTypeImage = 2
+        checkTypeImage = 3
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -391,7 +393,7 @@ class PostNewsViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        checkTypeImage = 3
+        checkTypeImage = 2
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -454,46 +456,50 @@ class PostNewsViewController: UIViewController {
     func uploadData() {
         if checkData() == true {
             // upload image
-            let group = DispatchGroup()
-            group.enter() // uploadFile
             ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(postNewsModel.dataThumbnail!, 0.2)!, name: "dataT.jpg", completion: { (link) in
                 self.postNewsModel.thumbnail = link
-                group.leave()
-            })
-            if postNewsModel.arrImage.count > 0 {
-                for data in postNewsModel.arrImage {
-                    group.enter()
-                    ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(data, 1.0)!, name: "subThumbnail.jpg", completion: { (link) in
-                        if self.postNewsModel.image1  == "" {
-                            self.postNewsModel.image1 = link
-                        } else if self.postNewsModel.image2  == "" {
-                            self.postNewsModel.image2 = link
-                        } else {
-                            self.postNewsModel.image3 = link
-                        }
-                        group.leave()
-                    })
+                
+                if self.postNewsModel.arrImage.count > 0 {
+                    let count = self.self.postNewsModel.arrImage.count - 1
+                    self.uploadSubImage(numberImage: count)
                 }
-            }
-            group.notify(queue: .global(qos: .background), execute: {
-                ServiceManager.martService.addPostNews(self.postNewsModel, completion: { (result) in
-                    switch result {
-                    case .success( _):
-                        print("Okkkkkkkkkkkkkkk")
-                        self.showDialog(title: "HuNe Mart", message: "PostNewsSuccess".localized(), handler: { (action) in
-                            self.navigationController?.popViewController(animated: true)
-                        })
-                    case .failure( _):
-                        print("Erorrrrrrrrrrrr")
-                        self.showDialog(title: "HuNe Mart", message: "PostNewsError".localized(), handler:nil)
-                    }
-                })
             })
             
         } else {
             self.showDialog(title: "Empty Field".localized(), message: "Vui lòng nhập đầy đủ thông tin", handler:nil)
         }
         
+    }
+    
+    func uploadSubImage(numberImage : Int) {
+        var count = numberImage
+        if count >= 0 {
+            ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(postNewsModel.arrImage[count], 0.2)!, name: "subThumbnail.jpg", completion: { (link) in
+                print("/////////////////////////////////////////",link!)
+                if count == 0 {
+                    self.postNewsModel.image1 = link
+                } else if count == 1 {
+                    self.postNewsModel.image2 = link
+                } else {
+                    self.postNewsModel.image3 = link
+                }
+                count = count - 1
+                self.uploadSubImage(numberImage: count)
+            })
+        } else {
+            ServiceManager.martService.addPostNews(self.postNewsModel, completion: { (result) in
+                switch result {
+                case .success( _):
+                    print("Okkkkkkkkkkkkkkk")
+                    self.showDialog(title: "HuNe Mart", message: "PostNewsSuccess".localized(), handler: { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                case .failure( _):
+                    print("Erorrrrrrrrrrrr")
+                    self.showDialog(title: "HuNe Mart", message: "PostNewsError".localized(), handler:nil)
+                }
+            })
+        }
     }
     
     func editUpload() {

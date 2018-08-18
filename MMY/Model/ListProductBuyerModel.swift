@@ -28,6 +28,9 @@ class ListProductBuyerModel: BaseModel {
     var star: Int?
     var phone: String?
     var full_name: String?
+    var image0: String?
+    var image1: String?
+    var image2: String?
     
     required init?(json: JSON) {
         super.init(json: json)
@@ -52,6 +55,9 @@ class ListProductBuyerModel: BaseModel {
         star = json["star"].intValue
         phone = json["phone"].stringValue
         full_name = json["full_name"].stringValue
+        image0 = json["image0"].stringValue
+        image1 = json["image1"].stringValue
+        image2 = json["image2"].stringValue
     
     }
     

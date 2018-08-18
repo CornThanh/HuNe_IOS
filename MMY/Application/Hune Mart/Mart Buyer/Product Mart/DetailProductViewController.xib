@@ -15,7 +15,10 @@
             <connections>
                 <outlet property="btBuy" destination="dRL-kV-RO4" id="yGV-Fq-B6O"/>
                 <outlet property="btLike" destination="B7G-rc-eMP" id="8RU-jK-c4u"/>
+                <outlet property="imageThree" destination="fIw-gK-qDd" id="DqQ-x8-8uq"/>
+                <outlet property="imageTwo" destination="mNb-6c-pgP" id="1sy-5f-3Zc"/>
                 <outlet property="imgeFill" destination="ALH-ov-Mqr" id="g4g-X0-dHd"/>
+                <outlet property="imgeOne" destination="GGr-fL-rBn" id="WGD-OK-aPN"/>
                 <outlet property="imgePlus" destination="rEr-05-aOh" id="9wI-ld-78l"/>
                 <outlet property="lbAmount" destination="dsB-Ru-ZYn" id="IG5-fN-bpG"/>
                 <outlet property="lbNameBuyer" destination="vbo-fp-nGA" id="RzM-2E-k7n"/>
