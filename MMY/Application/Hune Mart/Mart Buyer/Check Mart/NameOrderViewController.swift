@@ -46,16 +46,17 @@ class NameOrderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupButton()
+        setupUI()
     }
     
     func setupUI() {
         
         if orderData?.status == 1 {
             btEvaluate.isHidden = true
-            lbStatus.isHidden = false
+            lbStatus.text = "NameOrderViewController2".localized()
         } else {
             btEvaluate.isHidden = false
-            lbStatus.isHidden = true
+            lbStatus.text = "NameOrderViewController4".localized()
         }
         
         var total = 0

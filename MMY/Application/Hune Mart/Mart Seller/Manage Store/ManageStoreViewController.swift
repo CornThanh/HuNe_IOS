@@ -52,7 +52,11 @@ class ManageStoreViewController: UIViewController {
     func nameProduct(_ index: Int) -> String{
         // type product
         var string = ""
-        let nameProduct = dataManageStore[index].name
+        for data in ShareData.arrProductType {
+            if data.id == dataManageStore[index].product_type {
+                string = data.name!
+            }
+        }
         
         var price = ""
         if let priceProduct = dataManageStore[index].price {
@@ -73,8 +77,8 @@ class ManageStoreViewController: UIViewController {
             }
         }
         
-        let subString = nameProduct! + " " + type.lowercased() + " " + price
-        string = subString + ".000 VNĐ" + " " + unit.lowercased()
+        let subString = string + " " + type.lowercased() + " " + price
+        string = subString + " VNĐ" + " " + unit.lowercased()
         return string
     }
 

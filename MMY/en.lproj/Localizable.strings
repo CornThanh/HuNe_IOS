@@ -351,6 +351,7 @@ Kết nối với các khách hàng , đối tác có nhu cầu tuyển dụng t
 "NameOrderViewController1" = "Evaluate";
 "NameOrderViewController2" = "Waiting for the seller to confirm.";
 "NameOrderViewController3" = "Name order";
+"NameOrderViewController4" = "The seller has confirmed this order. Do you want to evaluate the seller?";
 "Comment" = "Đánh giá";
 "HuneMart" = "HuNe Mart";
 "MartSellerViewController1" = "Post sale";

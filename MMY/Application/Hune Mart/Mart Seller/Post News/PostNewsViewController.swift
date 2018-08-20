@@ -10,6 +10,7 @@ import UIKit
 import DropDown
 import CoreLocation
 import GoogleMaps
+import SDWebImage
 
 class PostNewsViewController: UIViewController {
     
@@ -78,6 +79,10 @@ class PostNewsViewController: UIViewController {
         self.pickerDate()
         self.getLocation()
         self.getConfig()
+        if checkEdit == true {
+            editData()
+            editImage()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,13 +94,24 @@ class PostNewsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.setupTextFiled()
         self.setupImage()
-        if checkEdit == true {
-            editData()
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func editImage() {
+        if dataEdit?.image0 != "" {
+            imageSubOne.sd_setImage(with: URL(string: (dataEdit?.image0)!), placeholderImage: UIImage(named: "placeholder0.png"), options: [], completed: nil)
+        }
+        
+        if dataEdit?.image1 != "" {
+            imageSubTwo.sd_setImage(with: URL(string: (dataEdit?.image1)!), placeholderImage: UIImage(named: "placeholder1.png"), options: [], completed: nil)
+        }
+        
+        if dataEdit?.image2 != "" {
+            imageSubThree.sd_setImage(with: URL(string: (dataEdit?.image2)!), placeholderImage: UIImage(named: "placeholder2.png"), options: [], completed: nil)
+        }
     }
     
     func getConfig() {
@@ -462,6 +478,19 @@ class PostNewsViewController: UIViewController {
                 if self.postNewsModel.arrImage.count > 0 {
                     let count = self.self.postNewsModel.arrImage.count - 1
                     self.uploadSubImage(numberImage: count)
+                } else {
+                    ServiceManager.martService.addPostNews(self.postNewsModel, completion: { (result) in
+                        switch result {
+                        case .success( _):
+                            print("Okkkkkkkkkkkkkkk")
+                            self.showDialog(title: "HuNe Mart", message: "PostNewsSuccess".localized(), handler: { (action) in
+                                self.navigationController?.popViewController(animated: true)
+                            })
+                        case .failure( _):
+                            print("Erorrrrrrrrrrrr")
+                            self.showDialog(title: "HuNe Mart", message: "PostNewsError".localized(), handler:nil)
+                        }
+                    })
                 }
             })
             
