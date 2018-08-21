@@ -217,6 +217,7 @@ extension ServiceManager {
             params["user_rating"] = orderData.seller_id
             params["comments"] = comment
             params["rating"] = rating
+            params["product_id"] = orderData.product_id
             
             requestServer(urlString, method: .post, parameters: params) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")

@@ -30,6 +30,10 @@
 		1847AFDB208A27530073354F /* DefaultFindJobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1847AFD9208A27530073354F /* DefaultFindJobCollectionViewCell.xib */; };
 		1847AFDE208A277D0073354F /* DefaultFindJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847AFDC208A277D0073354F /* DefaultFindJobTableViewCell.swift */; };
 		1847AFDF208A277D0073354F /* DefaultFindJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1847AFDD208A277D0073354F /* DefaultFindJobTableViewCell.xib */; };
+		1863AA20212C529E005B50DB /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F27CF72114CB21006C9A78 /* PromotionViewController.xib */; };
+		1863AA21212C5350005B50DB /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F27CF92114CB23006C9A78 /* PromotionTableViewCell.xib */; };
+		1863AA22212C549F005B50DB /* DetailPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F27CF82114CB22006C9A78 /* DetailPromotionViewController.xib */; };
+		1863AA23212C557B005B50DB /* AdsManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F27D012114CB9F006C9A78 /* AdsManagementViewController.xib */; };
 		18751A782114D4BB00AA576D /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18751A772114D41200AA576D /* PromotionViewController.swift */; };
 		18751A792114D6CB00AA576D /* AdsManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F27D002114CB9D006C9A78 /* AdsManagementViewController.swift */; };
 		18751A7A2114D6F500AA576D /* AdsManagerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F27CFF2114CB9B006C9A78 /* AdsManagerTableViewCell.swift */; };
@@ -1670,6 +1674,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1863AA23212C557B005B50DB /* AdsManagementViewController.xib in Resources */,
+				1863AA22212C549F005B50DB /* DetailPromotionViewController.xib in Resources */,
+				1863AA21212C5350005B50DB /* PromotionTableViewCell.xib in Resources */,
+				1863AA20212C529E005B50DB /* PromotionViewController.xib in Resources */,
 				18B1F080210336BA00571BB0 /* ManageOrderTableViewCell.xib in Resources */,
 				18B1F07F2103363D00571BB0 /* ManageOrderViewController.xib in Resources */,
 				1847A2F420C91CDC008C3923 /* GoogleService-Info.plist in Resources */,

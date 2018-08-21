@@ -50,13 +50,17 @@ class NameOrderViewController: UIViewController {
     }
     
     func setupUI() {
-        
-        if orderData?.status == 1 {
+        if orderData?.comments_status == 1 {
             btEvaluate.isHidden = true
-            lbStatus.text = "NameOrderViewController2".localized()
+            lbStatus.text = "NameOrderViewController5".localized()
         } else {
-            btEvaluate.isHidden = false
-            lbStatus.text = "NameOrderViewController4".localized()
+            if orderData?.status == 1 {
+                btEvaluate.isHidden = true
+                lbStatus.text = "NameOrderViewController2".localized()
+            } else {
+                btEvaluate.isHidden = false
+                lbStatus.text = "NameOrderViewController4".localized()
+            }
         }
         
         var total = 0

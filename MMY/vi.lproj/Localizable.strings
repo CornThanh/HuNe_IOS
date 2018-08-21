@@ -359,6 +359,7 @@ Kết nối với các khách hàng , đối tác có nhu cầu tuyển dụng t
 "NameOrderViewController2" = "Đang đợi người bán xác nhận.";
 "NameOrderViewController3" = "Tên đơn hàng";
 "NameOrderViewController4" = "Người bán đã xác nhận đơn hàng này. Bạn có muốn đánh giá người bán.";
+"NameOrderViewController5" = "Người bán đã xác nhận đơn hàng này.";
 "Comment" = "Đánh giá";
 "HuneMart" = "Cửa hàng HuNe";
 "MartSellerViewController1" = "Đăng tin bán";

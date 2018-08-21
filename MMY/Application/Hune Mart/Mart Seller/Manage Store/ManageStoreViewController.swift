@@ -77,8 +77,10 @@ class ManageStoreViewController: UIViewController {
             }
         }
         
-        let subString = string + " " + type.lowercased() + " " + price
-        string = subString + " VNĐ" + " " + unit.lowercased()
+        let priceInt = Int(price)?.stringWithSepator
+        
+        let subString = string + " " + type.lowercased() + " " + priceInt!
+        string = subString + ".000 VNĐ" + " " + unit.lowercased()
         return string
     }
 
