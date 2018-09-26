@@ -36,6 +36,7 @@ pod 'ChameleonFramework'
 pod 'DropDown'
 pod 'RSKImageCropper'
 pod 'SDWebImage/WebP'
+pod 'SVProgressHUD'
 
 end
 

@@ -151,6 +151,7 @@ PODS:
     - libwebp (~> 0.5)
     - SDWebImage/Core
   - SnapKit (3.2.0)
+  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.1.0)
   - XCGLogger (5.0.5):
     - XCGLogger/Core (= 5.0.5)
@@ -184,6 +185,7 @@ DEPENDENCIES:
   - RSKImageCropper
   - SDWebImage/WebP
   - SnapKit (= 3.2.0)
+  - SVProgressHUD
   - SwiftyJSON
   - XCGLogger (~> 5.0.4)
 
@@ -226,6 +228,7 @@ SPEC REPOS:
     - RSKImageCropper
     - SDWebImage
     - SnapKit
+    - SVProgressHUD
     - SwiftyJSON
     - XCGLogger
 
@@ -284,9 +287,10 @@ SPEC CHECKSUMS:
   RSKImageCropper: 50d5a3e4160f0309b14d75b89d5ae2f496d56e0d
   SDWebImage: b534502786e43dde36dfcaee89356fe6df30e203
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   XCGLogger: 49bceee6dc0c738eae5d6454fdbf800d62256b74
 
-PODFILE CHECKSUM: e49bd92647234e5aa3d342fc9bcc64560ebbc2db
+PODFILE CHECKSUM: 1f2395c15d7cbac6cb6c41e5cb2f261656a39d74
 
 COCOAPODS: 1.5.0

@@ -98,7 +98,7 @@ extension CheckOrderViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NameOrderViewController(orderData: dataOrder[indexPath.row], nameOrder: nameOrder(indexPath.row))
+        let vc = NameOrderBuyerViewController(orderData: dataOrder[indexPath.row], nameOrder: nameOrder(indexPath.row))
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

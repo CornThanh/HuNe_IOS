@@ -24,8 +24,11 @@ class ManageStoreModel: BaseModel {
     var status: Int?
     var user_id: Int?
     var create_date: Int?
-    var transport_fee: Int?
+    var transport_fee: String?
     var star: Int?
+    var image0: String?
+    var image1: String?
+    var image2: String?
     
     required init?(json: JSON) {
         super.init(json: json)
@@ -45,9 +48,12 @@ class ManageStoreModel: BaseModel {
         status = json["status"].intValue
         user_id = json["user_id"].intValue
         create_date = json["create_date"].intValue
-        transport_fee = json["transport_fee"].intValue
+        transport_fee = json["transport_fee"].stringValue
         star = json["star"].intValue
         thumbnail = json["thumbnail"].stringValue
+        image0 = json["image0"].stringValue
+        image1 = json["image1"].stringValue
+        image2 = json["image2"].stringValue
     }
 }
 

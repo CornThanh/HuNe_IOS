@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #3 in PostNewsViewController.editUpload():PostNewsViewController.swift">
+         contextName = "DefaultFindJobViewController.btTapUpload(_:):DefaultFindJobViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "error">
+               value = "postDataArray">
+            </PersistentString>
+            <PersistentString
+               value = "paymentPeriod">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,25 +22,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #2 in AddCommentViewController.tableView(_:cellForRowAt:):AddCommentViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell.commentTF.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DefaultFindJobViewController.btTapUpload(_:):DefaultFindJobViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "postDataArray">
-            </PersistentString>
-            <PersistentString
-               value = "paymentPeriod">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ServiceManager.Service.requestServer(_:method:parameters:handler:):ServiceManager.swift">
          <PersistentStrings>
             <PersistentString
@@ -46,10 +30,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #2 in AddCommentViewController.tableView(_:cellForRowAt:):AddCommentViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.commentTF.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PostNewsViewController.checkData():PostNewsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "postNewsModel.dataThumbnail">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #3 in PostNewsViewController.editUpload():PostNewsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

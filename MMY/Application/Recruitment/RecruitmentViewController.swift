@@ -133,7 +133,7 @@ extension RecruitmentViewController {
     }
     
     func displayMart() {
-        self.navigationController?.pushViewController(HuneMartViewController(), animated: true)
+        self.navigationController?.pushViewController(ProductMartViewController(), animated: true)
     }
     
     func displayHuneStore() {

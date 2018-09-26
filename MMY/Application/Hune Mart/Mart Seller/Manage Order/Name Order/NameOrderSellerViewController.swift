@@ -1,14 +1,15 @@
 //
-//  NameOrderViewController.swift
+//  NameOrderSellerViewController.swift
 //  MMY
 //
-//  Created by Apple on 7/23/18.
+//  Created by Apple on 9/12/18.
 //  Copyright © 2018 Blue R&D. All rights reserved.
 //
 
 import UIKit
 
-class NameOrderViewController: UIViewController {
+class NameOrderSellerViewController: UIViewController {
+
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
@@ -20,7 +21,7 @@ class NameOrderViewController: UIViewController {
     var nameTitle: String?
     
     init(data: ManageOrderModel, nameTitle: String) {
-        super.init(nibName: "NameOrderBuyerViewController" , bundle: nil)
+        super.init(nibName: "NameOrderSellerViewController" , bundle: nil)
         self.data = data
         self.nameTitle = nameTitle
     }
@@ -41,7 +42,7 @@ class NameOrderViewController: UIViewController {
             btCheckStatus.isHidden = true
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,21 +50,21 @@ class NameOrderViewController: UIViewController {
     
     func setData() {
         lbTitle.text = nameTitle
-    
+        
         var total = 0
         if let quantity = data?.quantity, let price = data?.price {
             total = quantity * price
         }
-        lbTotal.text = String(total)
+        lbTotal.text = Int(total).stringWithSepator
         lbNumberPhoneBuyer.text = data?.phone
     }
- 
+    
     func setupUI() {
         lbAddressBuyer.isHidden = true
         btCheckStatus.layer.cornerRadius = self.btCheckStatus.frame.size.height/2
         btCheckStatus.backgroundColor = UIColor(hexString: "00AB4E")
         btCheckStatus.setTitle("Accept".localized(), for: .normal)
-    
+        
     }
     
     @IBAction func actionStatus(_ sender: Any) {
@@ -79,5 +80,4 @@ class NameOrderViewController: UIViewController {
             }
         }
     }
-    
 }

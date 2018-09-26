@@ -27,6 +27,7 @@ class OrderModel: BaseModel {
     var type: Int?
     var address: String?
     var name: String?
+    var comments_status: Int?
     
     required init?(json: JSON) {
         super.init(json: json)
@@ -50,5 +51,6 @@ class OrderModel: BaseModel {
         type = json["type"].intValue
         address = json["address"].stringValue
         name = json["name"].stringValue
+        comments_status = json["comments_status"].intValue
     }
 }

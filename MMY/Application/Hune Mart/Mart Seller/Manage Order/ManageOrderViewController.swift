@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ManageOrderViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class ManageOrderViewController: UIViewController {
     @IBOutlet var tableview: UITableView!
     
     var dataManageOrder = [ManageOrderModel]()
+    let typeDropDown = DropDown()
+    var checkFromDate = false
+    var checkToDate = false
     
     init() {
         super.init(nibName: "ManageOrderViewController", bundle: nil)
@@ -32,6 +36,7 @@ class ManageOrderViewController: UIViewController {
         title = "MartSellerViewController3".localized()
         self.setupTableView()
         self.setupGesture()
+        setupStatus()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,13 +60,13 @@ class ManageOrderViewController: UIViewController {
     }
     
     func callData() {
-        ServiceManager.martService.getSellerOrder { (result) in
+        ServiceManager.martService.getSellerOrder(status: 0, fromDate: "", toDate: "") { (result) in
             switch result {
-            case .success(let data, _):
-                self.dataManageOrder = data
-                self.tableview.reloadData()
-            case .failure(let error):
-                print("error", error.errorCode)
+                case .success(let data, _):
+                    self.dataManageOrder = data
+                    self.tableview.reloadData()
+                case .failure(let error):
+                    print("error", error.errorCode)
             }
         }
     }
@@ -89,7 +94,7 @@ class ManageOrderViewController: UIViewController {
         }
         
         let subString = dataManageOrder[index].buyer_name! + " mua " + quantity + " "
-        string = subString + typeProduct.lowercased() + " " + type.lowercased()
+        string = subString + (dataManageOrder[index].buy_product?.lowercased())! + " " + type.lowercased()
         return string
     }
     
@@ -105,6 +110,29 @@ class ManageOrderViewController: UIViewController {
         
         tfFromDate.layer.masksToBounds = true
         tfToDate.layer.masksToBounds = true
+        
+        tfToDate.delegate = self
+        tfFromDate.delegate = self
+    }
+    
+    func setupStatus() {
+        typeDropDown.anchorView = btFilterStatus
+        DispatchQueue.main.async {
+            self.typeDropDown.bottomOffset = CGPoint(x: 0, y: self.btFilterStatus.bounds.height)
+        }
+        let typeDataSource = ["Chưa xác nhận", "Đã xác nhận"]
+        typeDropDown.dataSource = typeDataSource
+        typeDropDown.selectionAction = { [unowned self] (index, item) in
+            ServiceManager.martService.getSellerOrder(status: (index + 1), fromDate: "", toDate: "") { (result) in
+                switch result {
+                case .success(let data, _):
+                    self.dataManageOrder = data
+                    self.tableview.reloadData()
+                case .failure(let error):
+                    print("error", error.errorCode)
+                }
+            }
+        }
     }
     
     func setupGesture() {
@@ -116,8 +144,68 @@ class ManageOrderViewController: UIViewController {
     }
     
     @IBAction func actionFilterStatus(_ sender: Any) {
+        self.typeDropDown.show()
     }
     
+}
+
+extension ManageOrderViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //Format Date of Birth dd-MM-yyyy
+        
+        //initially identify your textfield
+        
+        if textField == tfToDate {
+            
+            // check the chars length dd -->2 at the same time calculate the dd-MM --> 5
+            if (tfToDate?.text?.characters.count == 2) || (tfToDate?.text?.characters.count == 5) {
+                //Handle backspace being pressed
+                if !(string == "") {
+                    // append the text
+                    tfToDate?.text = (tfToDate?.text)! + "/"
+                }
+            }
+            
+            if (textField.text!.characters.count >= 9 && (string.characters.count ) >= range.length) {
+                checkToDate = true
+            } else {
+                checkToDate = false
+            }
+            
+        }
+        else {
+            // check the chars length dd -->2 at the same time calculate the dd-MM --> 5
+            if (tfFromDate?.text?.characters.count == 2) || (tfFromDate?.text?.characters.count == 5) {
+                //Handle backspace being pressed
+                if !(string == "") {
+                    // append the text
+                    tfFromDate?.text = (tfFromDate?.text)! + "/"
+                }
+            }
+            
+            if (textField.text!.characters.count >= 9 && (string.characters.count ) >= range.length) {
+                checkFromDate = true
+            } else {
+                checkFromDate = false
+            }
+        }
+        
+        if checkToDate == true && checkFromDate == true {
+            ServiceManager.martService.getSellerOrder(status: 0, fromDate: (tfFromDate?.text)!, toDate: (tfToDate?.text)!) { (result) in
+                switch result {
+                case .success(let data, _):
+                    self.dataManageOrder = data
+                    self.tableview.reloadData()
+                    self.checkToDate = false
+                    self.checkFromDate = false
+                case .failure(let error):
+                    print("error", error.errorCode)
+                }
+            }
+        }
+        
+        return !(textField.text!.characters.count > 9 && (string.characters.count ) > range.length)
+    }
 }
 
 extension ManageOrderViewController: UITableViewDelegate, UITableViewDataSource {
@@ -135,7 +223,7 @@ extension ManageOrderViewController: UITableViewDelegate, UITableViewDataSource 
         
         cell.lbOrder.text = nameOrder(indexPath.row)
         if let price = dataManageOrder[indexPath.row].price {
-            cell.lbPrice.text = String(price)
+            cell.lbPrice.text = Int(price).stringWithSepator
         }
         
         if dataManageOrder[indexPath.row].status == 1 {
@@ -150,7 +238,7 @@ extension ManageOrderViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NameOrderBuyerViewController(data: dataManageOrder[indexPath.row], nameTitle: nameOrder(indexPath.row))
+        let vc = NameOrderSellerViewController(data: dataManageOrder[indexPath.row], nameTitle: nameOrder(indexPath.row))
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

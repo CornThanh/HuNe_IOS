@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NameOrderViewController: UIViewController {
+class NameOrderBuyerViewController: UIViewController {
 
 
     @IBOutlet weak var lbStatus: UILabel!
@@ -16,12 +16,13 @@ class NameOrderViewController: UIViewController {
     @IBOutlet weak var lbNumberPhoneSeller: UILabel!
     @IBOutlet weak var lbAddressSeller: UILabel!
     @IBOutlet weak var btEvaluate: UIButton!
+    @IBOutlet weak var lbNameSeller: UILabel!
     
     var orderData: OrderModel?
     var nameOrder: String?
     
     init(orderData: OrderModel, nameOrder: String) {
-        super.init(nibName: "NameOrderViewController", bundle: nil)
+        super.init(nibName: "NameOrderBuyerViewController", bundle: nil)
         self.orderData = orderData
         self.nameOrder = nameOrder
     }
@@ -46,25 +47,31 @@ class NameOrderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupButton()
+        setupUI()
     }
     
     func setupUI() {
-        
-        if orderData?.status == 1 {
+        if orderData?.comments_status == 1 {
             btEvaluate.isHidden = true
-            lbStatus.isHidden = false
+            lbStatus.text = "NameOrderViewController5".localized()
         } else {
-            btEvaluate.isHidden = false
-            lbStatus.isHidden = true
+            if orderData?.status == 1 {
+                btEvaluate.isHidden = true
+                lbStatus.text = "NameOrderViewController2".localized()
+            } else {
+                btEvaluate.isHidden = false
+                lbStatus.text = "NameOrderViewController4".localized()
+            }
         }
         
         var total = 0
         if let quantity = orderData?.quantity, let price = orderData?.price {
             total = quantity * price
         }
-        lbTotalMoney.text = String(total)
+        lbTotalMoney.text = Int(total).stringWithSepator
         lbAddressSeller.text = orderData?.address
         lbNumberPhoneSeller.text = orderData?.phone_number
+        lbNameSeller.text = orderData?.seller_name
     }
     
     func setupButton() {

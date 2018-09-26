@@ -17,6 +17,13 @@ class PromotionViewController: BaseViewController {
         super.viewDidLoad()
         addLeftBarButton()
         title = "Promotion".localized()
+        
+        tableView.register(UINib(nibName: "PromotionTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.estimatedRowHeight = 50.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         ServiceManager.adsService.getPromotion { (data) in
             if let result = data {
                 self.arrCoupon = result
@@ -27,12 +34,7 @@ class PromotionViewController: BaseViewController {
                 
             }
         }
-        
-        tableView.register(UINib(nibName: "PromotionTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 50.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+    
     }
 
     override func didReceiveMemoryWarning() {
