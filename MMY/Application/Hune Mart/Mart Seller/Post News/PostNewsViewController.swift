@@ -11,6 +11,7 @@ import DropDown
 import CoreLocation
 import GoogleMaps
 import SDWebImage
+import SVProgressHUD
 
 class PostNewsViewController: UIViewController {
     
@@ -22,18 +23,21 @@ class PostNewsViewController: UIViewController {
     @IBOutlet weak var btTypeProduct: UIButton!
     @IBOutlet weak var btType: UIButton!
     @IBOutlet weak var tfPrice: UITextField!
-    @IBOutlet weak var lbDescription: UITextField!
+  
+    @IBOutlet weak var TVDescription: UITextView!
     
     @IBOutlet weak var tfAmount: UITextField!
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
-    @IBOutlet weak var tfFeeShip: UITextField!
+    @IBOutlet weak var tvFeeShip: UITextView!
+    
     @IBOutlet weak var imageAvatar: UIImageView!
     
     @IBOutlet weak var imageSubThree: UIImageView!
     @IBOutlet weak var imageSubTwo: UIImageView!
     @IBOutlet weak var imageSubOne: UIImageView!
     @IBOutlet weak var btPost: UIButton!
+    @IBOutlet weak var tfNameProduct: UITextField!
     
     let typeDropDown1 = DropDown()
     let typeDropDown2 = DropDown()
@@ -122,11 +126,12 @@ class PostNewsViewController: UIViewController {
     }
     
     func editData() {
-        if let price = dataEdit?.price, let amount = dataEdit?.quantity, let feeShip = dataEdit?.transport_fee, let time = dataEdit?.end_date {
+        if let price = dataEdit?.price, let amount = dataEdit?.quantity, let feeShip = dataEdit?.transport_fee, let time = dataEdit?.end_date, let nameProduct = dataEdit?.name {
             tfPrice.text = String(price)
             tfAmount.text = String(amount)
-            tfFeeShip.text = String(feeShip)
+            tvFeeShip.text = String(feeShip)
             lbTime.text = String(time)
+            tfNameProduct.text = String(nameProduct)
         }
         
         for data in ShareData.arrType {
@@ -147,11 +152,13 @@ class PostNewsViewController: UIViewController {
             }
         }
         
-        lbDescription.text = dataEdit?.description
+        TVDescription.text = dataEdit?.description
         lbAddress.text = dataEdit?.address
         
         if postNewsModel.dataThumbnail == nil {
             imageAvatar.sd_setImage(with: URL(string: (self.dataEdit?.thumbnail)!), placeholderImage: UIImage(named: "placeholder.png"), options: [], completed: nil)
+            postNewsModel.dataThumbnail = imageAvatar.image
+            
         } else {
             imageAvatar.image = postNewsModel.dataThumbnail
         }
@@ -159,22 +166,22 @@ class PostNewsViewController: UIViewController {
     }
     
     func checkData() -> Bool{
-        if tfPrice.text == "" || lbDescription.text == "" || tfAmount.text == "" || lbTime.text == "" || lbAddress.text == "" || tfFeeShip.text == "" || postNewsModel.dataThumbnail == nil  {
+        if tfPrice.text == "" || TVDescription.text == "" || tfAmount.text == "" || lbTime.text == "" || lbAddress.text == "" || tvFeeShip.text == "" || postNewsModel.dataThumbnail == nil || tfNameProduct.text == "" {
             return false
         } else {
-            postNewsModel.name = "test"
+            postNewsModel.name = tfNameProduct.text
             postNewsModel.status = 1
             postNewsModel.price = tfPrice.text
-            postNewsModel.description = lbDescription.text
+            postNewsModel.description = TVDescription.text
             postNewsModel.quantity = Int(tfAmount.text!)
-            postNewsModel.transport_fee = Int(tfFeeShip.text!)
+            postNewsModel.transport_fee = tvFeeShip.text!
         }
         
         return true
     }
     
     func checkDataEdit() -> Bool {
-        if tfPrice.text == "" || lbDescription.text == "" || tfAmount.text == "" || lbTime.text == "" || lbAddress.text == "" || tfFeeShip.text == "" || imageAvatar.image == nil  {
+        if tfPrice.text == "" || TVDescription.text == "" || tfAmount.text == "" || lbTime.text == "" || lbAddress.text == "" || tvFeeShip.text == "" || imageAvatar.image == nil || tfNameProduct.text == "" {
             return false
         }
         
@@ -264,8 +271,8 @@ class PostNewsViewController: UIViewController {
     
     func setupTextFiled() {
         tfPrice.layer.cornerRadius = self.tfPrice.frame.size.height/2
-        tfFeeShip.layer.cornerRadius = self.tfFeeShip.frame.size.height/2
-        lbDescription.layer.cornerRadius = 10.0
+        tvFeeShip.layer.cornerRadius = self.tvFeeShip.frame.size.height/2
+        TVDescription.layer.cornerRadius = 10.0
         btPost.layer.cornerRadius = self.btPost.frame.size.height/2
         tfAmount.layer.cornerRadius = self.tfAmount.frame.size.height/2
         lbUnit.layer.cornerRadius = self.lbUnit.frame.size.height/2
@@ -273,32 +280,37 @@ class PostNewsViewController: UIViewController {
         lbTypeProduct.layer.cornerRadius = self.lbTypeProduct.frame.size.height/2
         lbTime.layer.cornerRadius = self.lbTime.frame.size.height/2
         lbAddress.layer.cornerRadius = self.lbTime.frame.size.height/2
+        tfNameProduct.layer.cornerRadius = self.tfNameProduct.frame.size.height/2
         
         tfPrice.layer.borderWidth = 1.0
-        tfFeeShip.layer.borderWidth = 1.0
-        lbDescription.layer.borderWidth = 1.0
+        tvFeeShip.layer.borderWidth = 1.0
+        TVDescription.layer.borderWidth = 1.0
         tfAmount.layer.borderWidth = 1.0
         lbUnit.layer.borderWidth = 1.0
         lbType.layer.borderWidth = 1.0
         lbTypeProduct.layer.borderWidth = 1.0
         lbTime.layer.borderWidth = 1.0
         lbAddress.layer.borderWidth = 1.0
+        tfNameProduct.layer.borderWidth = 1.0
         
         tfAmount.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         tfPrice.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
-        tfFeeShip.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
-        lbDescription.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
+        tvFeeShip.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
+        TVDescription.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         btPost.backgroundColor = UIColor(hexString: "00AB4E")
         lbUnit.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         lbType.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         lbTypeProduct.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         lbTime.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
         lbAddress.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
+        tfNameProduct.layer.borderColor = UIColor(hexString: "00AB4E")?.cgColor
+        
         
         tfAmount.layer.masksToBounds = true
         tfPrice.layer.masksToBounds = true
-        tfFeeShip.layer.masksToBounds = true
-        lbDescription.layer.masksToBounds = true
+        tvFeeShip.layer.masksToBounds = true
+        TVDescription.layer.masksToBounds = true
+        tfNameProduct.layer.masksToBounds = true
         
         btPost.setTitle("Recruit".localized(), for: .normal)
     }
@@ -377,6 +389,8 @@ class PostNewsViewController: UIViewController {
             let address = location.lines?.joined(separator: ", ")
             weakSelf.lbAddress.text = "   " + address!
             weakSelf.postNewsModel.address = address!
+            weakSelf.postNewsModel.lat = String(location.coordinate.latitude)
+            weakSelf.postNewsModel.lng = String(location.coordinate.longitude)
         }
     }
     
@@ -471,10 +485,13 @@ class PostNewsViewController: UIViewController {
     
     func uploadData() {
         if checkData() == true {
+            
+            SVProgressHUD.show()
+            
             // upload image
             ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(postNewsModel.dataThumbnail!, 0.2)!, name: "dataT.jpg", completion: { (link) in
                 self.postNewsModel.thumbnail = link
-                
+
                 if self.postNewsModel.arrImage.count > 0 {
                     let count = self.self.postNewsModel.arrImage.count - 1
                     self.uploadSubImage(numberImage: count)
@@ -483,11 +500,13 @@ class PostNewsViewController: UIViewController {
                         switch result {
                         case .success( _):
                             print("Okkkkkkkkkkkkkkk")
+                            SVProgressHUD.dismiss()
                             self.showDialog(title: "HuNe Mart", message: "PostNewsSuccess".localized(), handler: { (action) in
                                 self.navigationController?.popViewController(animated: true)
                             })
                         case .failure( _):
                             print("Erorrrrrrrrrrrr")
+                            SVProgressHUD.dismiss()
                             self.showDialog(title: "HuNe Mart", message: "PostNewsError".localized(), handler:nil)
                         }
                     })
@@ -497,9 +516,9 @@ class PostNewsViewController: UIViewController {
         } else {
             self.showDialog(title: "Empty Field".localized(), message: "Vui lòng nhập đầy đủ thông tin", handler:nil)
         }
-        
+
     }
-    
+
     func uploadSubImage(numberImage : Int) {
         var count = numberImage
         if count >= 0 {
@@ -531,33 +550,93 @@ class PostNewsViewController: UIViewController {
         }
     }
     
-    func editUpload() {
-        if checkDataEdit() == true {
-            let group = DispatchGroup()
-            group.enter() // uploadFile
-            ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(imageAvatar.image!, 0.2)!, name: "dataT.jpg", completion: { (link) in
+    func uploadEditData() {
+        if checkData() == true {
+            // upload image
+            ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(postNewsModel.dataThumbnail!, 0.2)!, name: "dataT.jpg", completion: { (link) in
                 self.dataEdit?.thumbnail = link
-                group.leave()
-            })
-            group.notify(queue: .global(qos: .background), execute: {
-                ServiceManager.martService.updateSellerProduct(self.dataEdit!, product_id: (self.dataEdit?.product_id)! , completion: { (result) in
-                    switch result {
-                    case .success( _):
-                        print("Okkkkkkkkkkkkkkk")
-                        self.showDialog(title: "HuNe Mart", message: "EditNewsSuccess".localized(), handler: { (action) in
-                            self.navigationController?.popViewController(animated: true)
-                        })
-                    case .failure(let error):
-                        print("Erorrrrrrrrrrrr", error)
-                        self.showDialog(title: "HuNe Mart", message: "EditNewsError".localized(), handler:nil)
-                    }
-                })
+                
+                if self.postNewsModel.arrImage.count > 0 {
+                    let count = self.self.postNewsModel.arrImage.count - 1
+                    self.uploadEditSubImage(numberImage: count)
+                } else {
+                    ServiceManager.martService.updateSellerProduct(self.dataEdit!, product_id: (self.dataEdit?.product_id)! , completion: { (result) in
+                        switch result {
+                        case .success( _):
+                            print("Okkkkkkkkkkkkkkk")
+                            self.showDialog(title: "HuNe Mart", message: "EditNewsSuccess".localized(), handler: { (action) in
+                                self.navigationController?.popViewController(animated: true)
+                            })
+                        case .failure(let error):
+                            print("Erorrrrrrrrrrrr", error)
+                            self.showDialog(title: "HuNe Mart", message: "EditNewsError".localized(), handler:nil)
+                        }
+                    })                }
             })
             
-        }else {
+        } else {
             self.showDialog(title: "Empty Field".localized(), message: "Vui lòng nhập đầy đủ thông tin", handler:nil)
         }
+        
     }
+    
+    func uploadEditSubImage(numberImage : Int) {
+        var count = numberImage
+        if count >= 0 {
+            ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(postNewsModel.arrImage[count], 0.2)!, name: "subThumbnail.jpg", completion: { (link) in
+                print("/////////////////////////////////////////",link!)
+                if count == 0 {
+                    self.dataEdit?.image0 = link
+                } else if count == 1 {
+                    self.dataEdit?.image1 = link
+                } else {
+                    self.dataEdit?.image2 = link
+                }
+                count = count - 1
+                self.uploadEditSubImage(numberImage: count)
+            })
+        } else {
+            ServiceManager.martService.updateSellerProduct(self.dataEdit!, product_id: (self.dataEdit?.product_id)! , completion: { (result) in
+                switch result {
+                case .success( _):
+                    print("Okkkkkkkkkkkkkkk")
+                    self.showDialog(title: "HuNe Mart", message: "EditNewsSuccess".localized(), handler: { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                case .failure(let error):
+                    print("Erorrrrrrrrrrrr", error)
+                    self.showDialog(title: "HuNe Mart", message: "EditNewsError".localized(), handler:nil)
+                }
+            })        }
+    }
+    
+//    func editUpload() {
+//        if checkDataEdit() == true {
+//            let group = DispatchGroup()
+//            group.enter() // uploadFile
+//            ServiceManager.postService.uploadFile(dataFile: UIImageJPEGRepresentation(imageAvatar.image!, 0.2)!, name: "dataT.jpg", completion: { (link) in
+//                self.dataEdit?.thumbnail = link
+//                group.leave()
+//            })
+//            group.notify(queue: .global(qos: .background), execute: {
+//                ServiceManager.martService.updateSellerProduct(self.dataEdit!, product_id: (self.dataEdit?.product_id)! , completion: { (result) in
+//                    switch result {
+//                    case .success( _):
+//                        print("Okkkkkkkkkkkkkkk")
+//                        self.showDialog(title: "HuNe Mart", message: "EditNewsSuccess".localized(), handler: { (action) in
+//                            self.navigationController?.popViewController(animated: true)
+//                        })
+//                    case .failure(let error):
+//                        print("Erorrrrrrrrrrrr", error)
+//                        self.showDialog(title: "HuNe Mart", message: "EditNewsError".localized(), handler:nil)
+//                    }
+//                })
+//            })
+//
+//        }else {
+//            self.showDialog(title: "Empty Field".localized(), message: "Vui lòng nhập đầy đủ thông tin", handler:nil)
+//        }
+//    }
     
     @IBAction func actionPost(_ sender: Any) {
         if checkEdit == false {
@@ -565,9 +644,10 @@ class PostNewsViewController: UIViewController {
         } else {
             dataEdit?.price = Int(tfPrice.text!)
             dataEdit?.quantity = Int(tfAmount.text!)
-            dataEdit?.transport_fee =  Int(tfFeeShip.text!)
+            dataEdit?.transport_fee =  tvFeeShip.text!
             dataEdit?.end_date = lbTime.text
-            self.editUpload()
+            dataEdit?.name = tfNameProduct.text
+            self.uploadEditData()
         }
     }
     @IBAction func actionShowType(_ sender: Any) {
@@ -592,10 +672,12 @@ extension PostNewsViewController: UINavigationControllerDelegate, UIImagePickerC
                 imageAvatar.contentMode = .scaleAspectFit
                 imageAvatar.image = pickedImage
                 postNewsModel.dataThumbnail = pickedImage
+
             } else if checkTypeImage == 1 {
                 imageSubOne.contentMode = .scaleAspectFit
                 imageSubOne.image = pickedImage
                 postNewsModel.arrImage.append(pickedImage)
+          
             } else if checkTypeImage == 2 {
                 imageSubTwo.contentMode = .scaleAspectFit
                 imageSubTwo.image = pickedImage

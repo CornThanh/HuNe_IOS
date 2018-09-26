@@ -18,7 +18,7 @@ class PostNewsModel {
     var quantity: Int?
     var end_date: String?
     var address: String?
-    var transport_fee: Int?
+    var transport_fee: String?
     var status: Int?
     var thumbnail: String?
     var image1: String?
@@ -26,4 +26,6 @@ class PostNewsModel {
     var image3: String?
     var dataThumbnail: UIImage?
     var arrImage = [UIImage]()
+    var lat: String?
+    var lng: String?
 }

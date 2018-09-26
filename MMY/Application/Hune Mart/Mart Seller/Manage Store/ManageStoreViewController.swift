@@ -51,12 +51,12 @@ class ManageStoreViewController: UIViewController {
     
     func nameProduct(_ index: Int) -> String{
         // type product
-        var string = ""
-        for data in ShareData.arrProductType {
-            if data.id == dataManageStore[index].product_type {
-                string = data.name!
-            }
-        }
+        let stringName = dataManageStore[index].name
+//        for data in ShareData.arrProductType {
+//            if data.id == dataManageStore[index].product_type {
+//                string = data.name!
+//            }
+//        }
         
         var price = ""
         if let priceProduct = dataManageStore[index].price {
@@ -78,9 +78,9 @@ class ManageStoreViewController: UIViewController {
         }
         
         let priceInt = Int(price)?.stringWithSepator
-        
-        let subString = string + " " + type.lowercased() + " " + priceInt!
-        string = subString + ".000 VNĐ" + " " + unit.lowercased()
+    
+        let subString = stringName! + " " + type.lowercased() + " " + priceInt!
+        let string = subString + " VNĐ" + " " + unit.lowercased()
         return string
     }
 
@@ -104,6 +104,18 @@ extension ManageStoreViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ServiceManager.martService.editSellerProduct(productId: self.dataManageStore[indexPath.row].product_id!, completion: { (result) in
+            switch result {
+            case .success(_):
+                let vc = PostNewsViewController(checkEdit: true, dataEdit: self.dataManageStore[indexPath.row])
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .failure(let error):
+                print("error", error)
+            }
+        })
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

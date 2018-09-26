@@ -179,7 +179,13 @@ extension ProductMartViewController: UICollectionViewDelegate, UICollectionViewD
         }
         cell.lbNameProduct.text = self.nameProduct(index: indexPath.row)
         if let price = arrProduct[indexPath.row].price {
-            cell.lbPrice.text = String(describing: price)
+            for data in ShareData.arrUnit {
+                if data.id == arrProduct[indexPath.row].unit {
+                    if let name = data.name {
+                        cell.lbPrice.text = price.stringWithSepator + " đ/ 1\(name.lowercased())"
+                    }
+                }
+            }
         }
         cell.lbNameSeller.text = arrProduct[indexPath.row].full_name
         

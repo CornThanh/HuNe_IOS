@@ -53,6 +53,8 @@
 		18BAC57B2100D01C0031846B /* PostNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BAC5792100D01C0031846B /* PostNewsViewController.xib */; };
 		18BBB4C720B026DD009B48AB /* PickerDateNotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB4C520B026DD009B48AB /* PickerDateNotiViewController.swift */; };
 		18BBB4C820B026DD009B48AB /* PickerDateNotiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBB4C620B026DD009B48AB /* PickerDateNotiViewController.xib */; };
+		18BF82FF214808D600E076C1 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF82FE214808D600E076C1 /* CommentModel.swift */; };
+		18BF8301214809A300E076C1 /* ProductEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF8300214809A300E076C1 /* ProductEditModel.swift */; };
 		18C8716321155CF90001830F /* ProductMartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8716121155CF90001830F /* ProductMartViewController.swift */; };
 		18C8716421155CF90001830F /* ProductMartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8716221155CF90001830F /* ProductMartViewController.xib */; };
 		18CD657521134FFA0056C104 /* DetailProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD657321134FFA0056C104 /* DetailProductTableViewCell.swift */; };
@@ -79,16 +81,18 @@
 		18D9AEED20B469A100B9E797 /* NextNotiAdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D9AEEB20B469A100B9E797 /* NextNotiAdsViewController.xib */; };
 		18DCB44B2096D0BE00C9082F /* PayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCB4492096D0BE00C9082F /* PayoutViewController.swift */; };
 		18DCB44C2096D0BE00C9082F /* PayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DCB44A2096D0BE00C9082F /* PayoutViewController.xib */; };
+		18DD06C2214AAE5900122795 /* NameOrderBuyerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C87160211557F80001830F /* NameOrderBuyerViewController.xib */; };
 		18DD2B5820B1BCA50050BDA2 /* PaymentAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD2B5620B1BCA50050BDA2 /* PaymentAdsViewController.swift */; };
 		18DD2B5920B1BCA50050BDA2 /* PaymentAdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD2B5720B1BCA50050BDA2 /* PaymentAdsViewController.xib */; };
-		18DEC08120FF7595002C3D46 /* NameOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEC07F20FF7595002C3D46 /* NameOrderViewController.swift */; };
-		18DEC08220FF7595002C3D46 /* NameOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DEC08020FF7595002C3D46 /* NameOrderViewController.xib */; };
+		18DEC08120FF7595002C3D46 /* NameOrderBuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEC07F20FF7595002C3D46 /* NameOrderBuyerViewController.swift */; };
 		18DF018120FE3E12008FDFAC /* CheckOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF017F20FE3E12008FDFAC /* CheckOrderTableViewCell.swift */; };
 		18DF018220FE3E12008FDFAC /* CheckOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DF018020FE3E12008FDFAC /* CheckOrderTableViewCell.xib */; };
 		18DF018520FE444A008FDFAC /* ResponseBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF018320FE444A008FDFAC /* ResponseBuyViewController.swift */; };
 		18DF018620FE444A008FDFAC /* ResponseBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DF018420FE444A008FDFAC /* ResponseBuyViewController.xib */; };
 		18E1D1CE2114C7F000ABE271 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A3ECE41F6A760D0080C2F4 /* AccountKit.framework */; };
 		18E1EC3B2108B091000D9925 /* HuneMartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1EC3A2108B091000D9925 /* HuneMartService.swift */; };
+		18E623F12149659F00FF46DD /* NameOrderSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E623EF2149659F00FF46DD /* NameOrderSellerViewController.swift */; };
+		18E623F22149659F00FF46DD /* NameOrderSellerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E623F02149659F00FF46DD /* NameOrderSellerViewController.xib */; };
 		18EFCC9B20B16480001C6C39 /* NextPlaceAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EFCC9920B16480001C6C39 /* NextPlaceAdsViewController.swift */; };
 		18EFCC9C20B16480001C6C39 /* NextPlaceAdsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFCC9A20B16480001C6C39 /* NextPlaceAdsViewController.xib */; };
 		18F27D052114CCF4006C9A78 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F27D042114CCF4006C9A78 /* BaseModel.swift */; };
@@ -121,7 +125,6 @@
 		18F27D202114D174006C9A78 /* DetailCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F27CE42114CAAF006C9A78 /* DetailCoupon.swift */; };
 		18F52FF7210617A2006BE764 /* ManageStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F52FF5210617A2006BE764 /* ManageStoreTableViewCell.swift */; };
 		18F52FF8210617A2006BE764 /* ManageStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F52FF6210617A2006BE764 /* ManageStoreTableViewCell.xib */; };
-		18F52FFC21061AFE006BE764 /* NameOrderBuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F52FFA21061AFE006BE764 /* NameOrderBuyerViewController.swift */; };
 		4703EB7C2019C089004C364C /* TaskConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4703EB7A2019C089004C364C /* TaskConfirmViewController.swift */; };
 		4703EB7D2019C089004C364C /* TaskConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4703EB7B2019C089004C364C /* TaskConfirmViewController.xib */; };
 		47084A2C1FE21DF500266624 /* FindJobManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47084A251FE21DF500266624 /* FindJobManagerViewController.swift */; };
@@ -358,7 +361,9 @@
 		18BAC5792100D01C0031846B /* PostNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostNewsViewController.xib; sourceTree = "<group>"; };
 		18BBB4C520B026DD009B48AB /* PickerDateNotiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDateNotiViewController.swift; sourceTree = "<group>"; };
 		18BBB4C620B026DD009B48AB /* PickerDateNotiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerDateNotiViewController.xib; sourceTree = "<group>"; };
-		18C87160211557F80001830F /* NameOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NameOrderViewController.xib; path = "MMY/Application/Hune Mart/Mart Buyer/Check Mart/NameOrderViewController.xib"; sourceTree = SOURCE_ROOT; };
+		18BF82FE214808D600E076C1 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		18BF8300214809A300E076C1 /* ProductEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditModel.swift; sourceTree = "<group>"; };
+		18C87160211557F80001830F /* NameOrderBuyerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NameOrderBuyerViewController.xib; path = "MMY/Application/Hune Mart/Mart Buyer/Check Mart/NameOrderBuyerViewController.xib"; sourceTree = SOURCE_ROOT; };
 		18C8716121155CF90001830F /* ProductMartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMartViewController.swift; sourceTree = "<group>"; };
 		18C8716221155CF90001830F /* ProductMartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductMartViewController.xib; sourceTree = "<group>"; };
 		18CD657321134FFA0056C104 /* DetailProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -404,13 +409,14 @@
 		18DCB44A2096D0BE00C9082F /* PayoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayoutViewController.xib; sourceTree = "<group>"; };
 		18DD2B5620B1BCA50050BDA2 /* PaymentAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAdsViewController.swift; sourceTree = "<group>"; };
 		18DD2B5720B1BCA50050BDA2 /* PaymentAdsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentAdsViewController.xib; sourceTree = "<group>"; };
-		18DEC07F20FF7595002C3D46 /* NameOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameOrderViewController.swift; sourceTree = "<group>"; };
-		18DEC08020FF7595002C3D46 /* NameOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameOrderViewController.xib; sourceTree = "<group>"; };
+		18DEC07F20FF7595002C3D46 /* NameOrderBuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameOrderBuyerViewController.swift; sourceTree = "<group>"; };
 		18DF017F20FE3E12008FDFAC /* CheckOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOrderTableViewCell.swift; sourceTree = "<group>"; };
 		18DF018020FE3E12008FDFAC /* CheckOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOrderTableViewCell.xib; sourceTree = "<group>"; };
 		18DF018320FE444A008FDFAC /* ResponseBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuyViewController.swift; sourceTree = "<group>"; };
 		18DF018420FE444A008FDFAC /* ResponseBuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseBuyViewController.xib; sourceTree = "<group>"; };
 		18E1EC3A2108B091000D9925 /* HuneMartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuneMartService.swift; sourceTree = "<group>"; };
+		18E623EF2149659F00FF46DD /* NameOrderSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameOrderSellerViewController.swift; sourceTree = "<group>"; };
+		18E623F02149659F00FF46DD /* NameOrderSellerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameOrderSellerViewController.xib; sourceTree = "<group>"; };
 		18E6461720BEE81C002E7979 /* Hune.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hune.entitlements; sourceTree = "<group>"; };
 		18EFCC9920B16480001C6C39 /* NextPlaceAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPlaceAdsViewController.swift; sourceTree = "<group>"; };
 		18EFCC9A20B16480001C6C39 /* NextPlaceAdsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextPlaceAdsViewController.xib; sourceTree = "<group>"; };
@@ -757,8 +763,8 @@
 				181761B020FCDAF600C30E50 /* CheckOrderViewController.xib */,
 				18DF017F20FE3E12008FDFAC /* CheckOrderTableViewCell.swift */,
 				18DF018020FE3E12008FDFAC /* CheckOrderTableViewCell.xib */,
-				18DEC07F20FF7595002C3D46 /* NameOrderViewController.swift */,
-				18DEC08020FF7595002C3D46 /* NameOrderViewController.xib */,
+				18DEC07F20FF7595002C3D46 /* NameOrderBuyerViewController.swift */,
+				18C87160211557F80001830F /* NameOrderBuyerViewController.xib */,
 				18BAC5732100C3890031846B /* CommentSellerViewController.swift */,
 				18BAC5742100C3890031846B /* CommentSellerViewController.xib */,
 			);
@@ -898,6 +904,8 @@
 				18F27CDA2114CAA7006C9A78 /* UserModel.swift */,
 				18F27CF02114CAB8006C9A78 /* VoteModel.swift */,
 				18F27D042114CCF4006C9A78 /* BaseModel.swift */,
+				18BF82FE214808D600E076C1 /* CommentModel.swift */,
+				18BF8300214809A300E076C1 /* ProductEditModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -924,7 +932,8 @@
 			isa = PBXGroup;
 			children = (
 				18F52FFA21061AFE006BE764 /* NameOrderBuyerViewController.swift */,
-				18C87160211557F80001830F /* NameOrderViewController.xib */,
+				18E623EF2149659F00FF46DD /* NameOrderSellerViewController.swift */,
+				18E623F02149659F00FF46DD /* NameOrderSellerViewController.xib */,
 			);
 			path = "Name Order";
 			sourceTree = "<group>";
@@ -1674,6 +1683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD06C2214AAE5900122795 /* NameOrderBuyerViewController.xib in Resources */,
 				1863AA23212C557B005B50DB /* AdsManagementViewController.xib in Resources */,
 				1863AA22212C549F005B50DB /* DetailPromotionViewController.xib in Resources */,
 				1863AA21212C5350005B50DB /* PromotionTableViewCell.xib in Resources */,
@@ -1742,6 +1752,7 @@
 				CBE17F421F3CCA7F006DA928 /* JodHeaderCell.xib in Resources */,
 				18BBB4C820B026DD009B48AB /* PickerDateNotiViewController.xib in Resources */,
 				CBF3FFE61F3AECD4003E0F43 /* CandidateDetailCell.xib in Resources */,
+				18E623F22149659F00FF46DD /* NameOrderSellerViewController.xib in Resources */,
 				CBF0010E1F0D37BC00719BFB /* Lato-LightItalic.ttf in Resources */,
 				4740623E2050450100D6B2B8 /* WalletViewController.xib in Resources */,
 				47406254205046C700D6B2B8 /* CoinTransactionHistoryViewController.xib in Resources */,
@@ -1770,7 +1781,6 @@
 				CBF001061F0D37BC00719BFB /* Lato-Black.ttf in Resources */,
 				BA23D5F11E8122EE004BD0E4 /* appConfig.json in Resources */,
 				CBCED39E1F3CE58500AEE627 /* PersonViewController.xib in Resources */,
-				18DEC08220FF7595002C3D46 /* NameOrderViewController.xib in Resources */,
 				BAD613B21E545E27007B4A61 /* buttons.json in Resources */,
 				4796CB242021A656009C0909 /* CouponDetailViewController.xib in Resources */,
 				18D7ED4D20A09D6300F32EF5 /* PickerDateViewController.xib in Resources */,
@@ -1867,6 +1877,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -1899,6 +1910,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -1923,6 +1935,7 @@
 				18751A7B2114D78800AA576D /* PromotionTableViewCell.swift in Sources */,
 				18751A7A2114D6F500AA576D /* AdsManagerTableViewCell.swift in Sources */,
 				18751A792114D6CB00AA576D /* AdsManagementViewController.swift in Sources */,
+				18E623F12149659F00FF46DD /* NameOrderSellerViewController.swift in Sources */,
 				18751A782114D4BB00AA576D /* PromotionViewController.swift in Sources */,
 				18F27D202114D174006C9A78 /* DetailCoupon.swift in Sources */,
 				18F27D1F2114CFE7006C9A78 /* ShareData.swift in Sources */,
@@ -1996,6 +2009,7 @@
 				47485C9A20638D9B00A14C55 /* CalendarMonthCVCell.swift in Sources */,
 				47406253205046C700D6B2B8 /* CoinTransactionHistoryViewController.swift in Sources */,
 				CBFDF7571F2C504D0068A0CD /* AllReadAlertView.swift in Sources */,
+				18BF82FF214808D600E076C1 /* CommentModel.swift in Sources */,
 				47485C632063016A00A14C55 /* PlaceAdsViewController.swift in Sources */,
 				CBBDD99E1F3237D900A409E4 /* CategoryPickerVC.swift in Sources */,
 				181761A820FCD8FA00C30E50 /* MartBuyerViewController.swift in Sources */,
@@ -2014,7 +2028,7 @@
 				BA197DF11E5E879000622351 /* AdsFacebookProvider.swift in Sources */,
 				47485C8920630D7B00A14C55 /* JTAppleCalendarVariables.swift in Sources */,
 				BA0477BB1E5BEE2E004E1017 /* AuthGuestProvider.swift in Sources */,
-				18DEC08120FF7595002C3D46 /* NameOrderViewController.swift in Sources */,
+				18DEC08120FF7595002C3D46 /* NameOrderBuyerViewController.swift in Sources */,
 				CBF8B9C01F26767F007AB443 /* RecruitmentViewController.swift in Sources */,
 				CBFDF7771F2D22850068A0CD /* SettingViewController.swift in Sources */,
 				4796CB1E2021A1ED009C0909 /* StoreService.swift in Sources */,
@@ -2101,6 +2115,7 @@
 				474CF25F1FC270CD0047CC61 /* TaskDetailViewController.swift in Sources */,
 				47485C5F2063015500A14C55 /* BannerAdsViewController.swift in Sources */,
 				BA62EC211E76482C006E6AE7 /* AdsEnums.swift in Sources */,
+				18BF8301214809A300E076C1 /* ProductEditModel.swift in Sources */,
 				181761BB20FCE42E00C30E50 /* ProductMartCollectionViewCell.swift in Sources */,
 				4796CB232021A656009C0909 /* CouponDetailViewController.swift in Sources */,
 				18DD2B5820B1BCA50050BDA2 /* PaymentAdsViewController.swift in Sources */,
@@ -2114,7 +2129,6 @@
 				BAD613C01E545ED8007B4A61 /* BaseViewController.swift in Sources */,
 				CBF3FFE91F3AFBDA003E0F43 /* CommentTableViewCell.swift in Sources */,
 				CB794CDA1F096FDB009AB83F /* FBLoginTableViewCell.swift in Sources */,
-				18F52FFC21061AFE006BE764 /* NameOrderBuyerViewController.swift in Sources */,
 				BA0477BD1E5BEE2E004E1017 /* AuthService.swift in Sources */,
 				CBDBB8A61F30E0D000A70FF1 /* PostJobViewController.swift in Sources */,
 				CBD8F1EC1F4F3E420050F7E2 /* PhotoViewController.swift in Sources */,

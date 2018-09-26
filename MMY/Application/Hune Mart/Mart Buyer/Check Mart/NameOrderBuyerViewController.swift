@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NameOrderViewController: UIViewController {
+class NameOrderBuyerViewController: UIViewController {
 
 
     @IBOutlet weak var lbStatus: UILabel!
@@ -16,12 +16,13 @@ class NameOrderViewController: UIViewController {
     @IBOutlet weak var lbNumberPhoneSeller: UILabel!
     @IBOutlet weak var lbAddressSeller: UILabel!
     @IBOutlet weak var btEvaluate: UIButton!
+    @IBOutlet weak var lbNameSeller: UILabel!
     
     var orderData: OrderModel?
     var nameOrder: String?
     
     init(orderData: OrderModel, nameOrder: String) {
-        super.init(nibName: "NameOrderViewController", bundle: nil)
+        super.init(nibName: "NameOrderBuyerViewController", bundle: nil)
         self.orderData = orderData
         self.nameOrder = nameOrder
     }
@@ -67,9 +68,10 @@ class NameOrderViewController: UIViewController {
         if let quantity = orderData?.quantity, let price = orderData?.price {
             total = quantity * price
         }
-        lbTotalMoney.text = String(total)
+        lbTotalMoney.text = Int(total).stringWithSepator
         lbAddressSeller.text = orderData?.address
         lbNumberPhoneSeller.text = orderData?.phone_number
+        lbNameSeller.text = orderData?.seller_name
     }
     
     func setupButton() {

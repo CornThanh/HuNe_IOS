@@ -40,6 +40,8 @@ extension ServiceManager {
             params["image1"] = postNews.image1
             params["image2"] = postNews.image2
             params["image3"] = postNews.image3
+            params["lat"] = postNews.lat
+            params["lng"] = postNews.lng
             
             requestServer(urlString, method: .post, parameters: params) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")
@@ -151,11 +153,13 @@ extension ServiceManager {
         }
         
         func editSellerProduct(productId: String ,completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
-            var urlString = newBackendUrl + "hunemart/seller/product/\(productId)/edit"
+            var urlString = newBackendUrl + "hunemart/seller/product/edit"
             
             if let token = accessToken {
                 urlString.append("?token=\(token)")
             }
+            
+            urlString.append("&product_id=\(productId)")
         
             requestServer(urlString, method: .get, parameters: nil) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")
@@ -166,11 +170,14 @@ extension ServiceManager {
         
         func updateSellerProduct(_ postNews: ManageStoreModel, product_id: String, completion: @escaping ((SingleResult<BaseModel>) -> Void) ){
             
-            var urlString = newBackendUrl + "hunemart/seller/product/\(product_id)/update"
+            var urlString = newBackendUrl + "hunemart/seller/product/update"
             
             if let token = accessToken {
                 urlString.append("?token=\(token)")
             }
+            
+            ///hunemart/seller/product/update
+            urlString.append("&id=\(product_id)")
             
             var params = [String: Any]()
             params["name"] = postNews.name
@@ -193,13 +200,16 @@ extension ServiceManager {
         
         func deleteSellerProduct(_ productId: String, completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
             
-            var urlString = newBackendUrl + "hunemart/seller/product/\(productId)/delete"
+            var urlString = newBackendUrl + "hunemart/seller/product/delete"
             
             if let token = accessToken {
                 urlString.append("?token=\(token)")
             }
             
-            requestServer(urlString, method: .delete, parameters: nil) { (response) in
+            var params = [String: Any]()
+            params["product_id"] = productId
+            
+            requestServer(urlString, method: .delete, parameters: params) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")
                 completion(result)
             }
@@ -248,11 +258,13 @@ extension ServiceManager {
         
         func updateStatusOrderSeller(orderId: String, completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
             
-            var urlString = newBackendUrl + "hunemart/seller/order/\(orderId)/update"
+            var urlString = newBackendUrl + "hunemart/seller/order/update"
             
             if let token = accessToken {
                 urlString.append("?token=\(token)")
             }
+            
+            urlString.append("&order_id=\(orderId)")
             
             requestServer(urlString, method: .post, parameters: nil) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")
@@ -288,7 +300,7 @@ extension ServiceManager {
             
         }
         
-        func likeProduct (_ idProduct: String, completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
+        func likeProduct (_ idProduct: String, action: String , completion: @escaping ((SingleResult<BaseModel>) -> Void)) {
             var urlString = newBackendUrl + "hunemart/buyer/like"
             // POST /hunemart/buyer/dislike/{id}
             if let token = accessToken {
@@ -297,9 +309,26 @@ extension ServiceManager {
             
             var params = [String: Any]()
             params["id"] = idProduct
+            params["action"] = action
             
             requestServer(urlString, method: .post, parameters: params) { (response) in
                 let result = SingleResult<BaseModel>.handle(response: response, key: "data")
+                completion(result)
+            }
+        }
+        
+        func getComment(_ idProduct: String, completion: @escaping ((SingleResult<ProductEditModel>) -> Void)) {
+            
+            var urlString = newBackendUrl + "hunemart/seller/product/edit"
+            
+            if let token = accessToken {
+                urlString.append("?token=\(token)")
+            }
+            
+            urlString.append("&product_id=\(idProduct)")
+            
+            requestServer(urlString, method: .get, parameters: nil) { (response) in
+                let result = SingleResult<ProductEditModel>.handle(response: response, key: "data")
                 completion(result)
             }
         }

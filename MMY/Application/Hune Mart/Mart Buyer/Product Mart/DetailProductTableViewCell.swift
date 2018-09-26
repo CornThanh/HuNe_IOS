@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailProductTableViewCell: UITableViewCell {
-    @IBOutlet weak var lbComment: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

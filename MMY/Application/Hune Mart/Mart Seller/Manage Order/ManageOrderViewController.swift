@@ -94,7 +94,7 @@ class ManageOrderViewController: UIViewController {
         }
         
         let subString = dataManageOrder[index].buyer_name! + " mua " + quantity + " "
-        string = subString + typeProduct.lowercased() + " " + type.lowercased()
+        string = subString + (dataManageOrder[index].buy_product?.lowercased())! + " " + type.lowercased()
         return string
     }
     
@@ -223,7 +223,7 @@ extension ManageOrderViewController: UITableViewDelegate, UITableViewDataSource 
         
         cell.lbOrder.text = nameOrder(indexPath.row)
         if let price = dataManageOrder[indexPath.row].price {
-            cell.lbPrice.text = String(price)
+            cell.lbPrice.text = Int(price).stringWithSepator
         }
         
         if dataManageOrder[indexPath.row].status == 1 {
@@ -238,7 +238,7 @@ extension ManageOrderViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NameOrderBuyerViewController(data: dataManageOrder[indexPath.row], nameTitle: nameOrder(indexPath.row))
+        let vc = NameOrderSellerViewController(data: dataManageOrder[indexPath.row], nameTitle: nameOrder(indexPath.row))
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

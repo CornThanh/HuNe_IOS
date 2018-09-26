@@ -31,6 +31,8 @@ class ListProductBuyerModel: BaseModel {
     var image0: String?
     var image1: String?
     var image2: String?
+    var totalLike: Int?
+    var totalDisLike: Int?
     
     required init?(json: JSON) {
         super.init(json: json)
@@ -58,6 +60,8 @@ class ListProductBuyerModel: BaseModel {
         image0 = json["image0"].stringValue
         image1 = json["image1"].stringValue
         image2 = json["image2"].stringValue
+        totalLike = json["totalLike"].intValue
+        totalDisLike = json["totalDisLike"].intValue
     
     }
     

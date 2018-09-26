@@ -10,10 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NameOrderViewController" customModule="Hune" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NameOrderBuyerViewController" customModule="Hune" customModuleProvider="target">
             <connections>
                 <outlet property="btEvaluate" destination="Nwl-zl-srg" id="krQ-pi-BLP"/>
                 <outlet property="lbAddressSeller" destination="qeK-Rq-3Px" id="O0u-AE-45A"/>
+                <outlet property="lbNameSeller" destination="5SQ-EF-jiN" id="AGV-h2-ZL1"/>
                 <outlet property="lbNumberPhoneSeller" destination="Eko-qm-7Hx" id="VCJ-O5-qx6"/>
                 <outlet property="lbStatus" destination="6s3-MA-bd4" id="uQe-64-4g5"/>
                 <outlet property="lbTotalMoney" destination="3QN-Wv-tg6" id="CfY-Tc-bt5"/>
@@ -47,19 +48,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng tiền: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTp-kH-W2c">
-                    <rect key="frame" x="10" y="142.5" width="76" height="19.5"/>
+                    <rect key="frame" x="10" y="167.5" width="76" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QN-Wv-tg6">
-                    <rect key="frame" x="89" y="143" width="39.5" height="19.5"/>
+                    <rect key="frame" x="89" y="168" width="39.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-MA-bd4">
-                    <rect key="frame" x="10" y="222.5" width="355" height="21"/>
+                    <rect key="frame" x="10" y="247.5" width="355" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -79,6 +80,18 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên người bán:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-ld-Sf0">
+                    <rect key="frame" x="10" y="137.5" width="108" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SQ-EF-jiN">
+                    <rect key="frame" x="121" y="138" width="39.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -94,15 +107,19 @@
                 <constraint firstItem="Nwl-zl-srg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:14" id="EhM-Bq-YcN"/>
                 <constraint firstItem="3QN-Wv-tg6" firstAttribute="leading" secondItem="pTp-kH-W2c" secondAttribute="trailing" constant="3" id="Hsf-o6-RGX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nwl-zl-srg" secondAttribute="bottom" constant="30" id="IeB-VB-Dnl"/>
+                <constraint firstItem="5SQ-EF-jiN" firstAttribute="centerY" secondItem="jxy-ld-Sf0" secondAttribute="centerY" id="MZw-PE-ueE"/>
                 <constraint firstItem="6s3-MA-bd4" firstAttribute="top" secondItem="3QN-Wv-tg6" secondAttribute="bottom" constant="60" id="PSf-Ky-J3p"/>
                 <constraint firstItem="pTp-kH-W2c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="XLZ-es-cXy"/>
+                <constraint firstItem="jxy-ld-Sf0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ZX7-gI-b0N"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qeK-Rq-3Px" secondAttribute="trailing" constant="3" id="dwD-Y2-UF8"/>
+                <constraint firstItem="pTp-kH-W2c" firstAttribute="top" secondItem="jxy-ld-Sf0" secondAttribute="bottom" constant="10" id="fd7-6I-Wy3"/>
                 <constraint firstItem="3QN-Wv-tg6" firstAttribute="centerY" secondItem="pTp-kH-W2c" secondAttribute="centerY" id="inE-PE-Ut8"/>
                 <constraint firstItem="CtV-Op-Ces" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="k65-LY-LuV"/>
+                <constraint firstItem="jxy-ld-Sf0" firstAttribute="top" secondItem="hHU-Kt-NeK" secondAttribute="bottom" constant="5" id="uem-yz-Hn8"/>
                 <constraint firstItem="CtV-Op-Ces" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uxl-mD-4nb"/>
+                <constraint firstItem="5SQ-EF-jiN" firstAttribute="leading" secondItem="jxy-ld-Sf0" secondAttribute="trailing" constant="3" id="vN5-MZ-IKC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nwl-zl-srg" secondAttribute="trailing" constant="40" id="xfh-lf-reG"/>
                 <constraint firstItem="6s3-MA-bd4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ya2-FD-vba"/>
-                <constraint firstItem="pTp-kH-W2c" firstAttribute="top" secondItem="hHU-Kt-NeK" secondAttribute="bottom" constant="10" id="ztl-ck-M6u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="59.5"/>
